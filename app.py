@@ -58,7 +58,7 @@ def load_data():
         creds_json = st.secrets["GOOGLE_CREDENTIALS_JSON"]
         sheet_id = st.secrets["SPREADSHEET_ID"]
 
-        client = SheetsClient(credentials_json=creds_json, spreadsheet_id=sheet_id)
+        client = SheetsClient(creds_json, sheet_id)
         rows = client.get_all_signal_rows()
 
         if not rows:
