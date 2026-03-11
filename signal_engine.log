@@ -1,0 +1,1417 @@
+2026-03-04 06:55:52,394 [ERROR] __main__: SPREADSHEET_ID is not set. Create a .env file from .env.example.
+2026-03-04 06:58:06,449 [INFO] __main__: Connecting to Google Sheets...
+2026-03-04 06:58:09,645 [INFO] sheets.client: Created tab: company_watchlist
+2026-03-04 06:58:11,369 [INFO] sheets.client: Created tab: hiring_signals
+2026-03-04 06:58:12,899 [INFO] sheets.client: Created tab: collector_state
+2026-03-04 06:58:12,900 [INFO] sheets.client: All tabs verified.
+2026-03-04 06:58:12,900 [INFO] alerter: Alerter: no Slack webhook configured — alerts disabled.
+2026-03-04 06:58:12,901 [INFO] __main__: Slack alerts: disabled (set SLACK_WEBHOOK_URL to enable)
+2026-03-04 06:58:14,224 [INFO] __main__: Running initial pass of all collectors...
+2026-03-04 06:58:14,224 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-04 06:58:19,382 [INFO] scheduler: ✅ ATSCollector: 0 signals → 0 new written
+2026-03-04 06:58:19,384 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-04 06:58:21,477 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:23,013 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:23,933 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:25,081 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:26,254 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:27,620 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:28,848 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:29,965 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:30,998 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:32,461 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:33,670 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:34,954 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:36,017 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:37,245 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:38,475 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:39,837 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:40,953 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:42,673 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:44,432 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:45,265 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:46,221 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:47,491 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:48,720 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:50,251 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:51,111 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 06:58:52,467 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=hiring+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 06:58:54,062 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=looking+for+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 06:58:55,357 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=we're+hiring+PM+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 06:58:58,544 [INFO] pipeline: ✅ Wrote signal [5/10] I will not promote. 10% Equity for non-tech cofounder. @ Unknown (Reddit) (reddit)
+2026-03-04 06:58:59,482 [INFO] pipeline: ✅ Wrote signal [5/10] How do you really scale productivity platforms? "i will not promote" @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:00,310 [INFO] pipeline: ✅ Wrote signal [5/10] Does the speed of our hiring process impact the achievement of our growth targets following an investment round? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:01,165 [INFO] pipeline: ✅ Wrote signal [5/10] Product Management Jobs Report for March 2026 @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:01,968 [INFO] pipeline: ✅ Wrote signal [5/10] How do so many teams have access to use any AI tools they want? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:02,777 [INFO] pipeline: ✅ Wrote signal [5/10] Using AI in technical/platform product management @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:03,664 [INFO] pipeline: ✅ Wrote signal [5/10] Anyone using agents for product operations or jira/slack/customer ticketing systems? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:04,621 [INFO] pipeline: ✅ Wrote signal [5/10] Why is every role at big Canadian banks now called a Product Manager? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:05,466 [INFO] pipeline: ✅ Wrote signal [5/10] Is the Cursor for PMs tool hype real? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:06,299 [INFO] pipeline: ✅ Wrote signal [5/10] Any PMs on the spectrum? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:07,110 [INFO] pipeline: ✅ Wrote signal [5/10] Product management at a bank @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:07,988 [INFO] pipeline: ✅ Wrote signal [5/10] AI will kill Products before it kills Product Management. Prove me wrong! @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:08,990 [INFO] pipeline: ✅ Wrote signal [5/10] What AI tool do you use most ? and for what use cases ? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:09,930 [INFO] pipeline: ✅ Wrote signal [5/10] What would u do as PM? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:10,749 [INFO] pipeline: ✅ Wrote signal [5/10] Product Management Jobs Report for December 2025 @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:11,610 [INFO] pipeline: ✅ Wrote signal [5/10] Product Management Jobs Report for November 2025 @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:12,424 [INFO] pipeline: ✅ Wrote signal [5/10] How important are tech skills for product managers in the world of AI? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:13,244 [INFO] pipeline: ✅ Wrote signal [5/10] A perspective from hiring Growth & Product Managers this year in B2B SaaS. (Perspective from the Company) @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:14,111 [INFO] pipeline: ✅ Wrote signal [5/10] Reflection: The market around aspiring, unskilled, and laid-off PMs in 2025. @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:14,941 [INFO] pipeline: ✅ Wrote signal [5/10] what are the qualities that make a good Product Manager? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:15,767 [INFO] pipeline: ✅ Wrote signal [5/10] how do you write PRDs in 2026? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:16,661 [INFO] pipeline: ✅ Wrote signal [5/10] Head of Product or Sr. Director of Product? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:17,597 [INFO] pipeline: ✅ Wrote signal [5/10] How to Learn to Scale as a VP @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:18,443 [INFO] pipeline: ✅ Wrote signal [5/10] Steve Evans (Hasbro) Weighs in on Product Decision Making in era of Consumer Restaint @ Hasbro for the Star Wars and Marvel Legends lines and (reddit)
+2026-03-04 06:59:19,256 [INFO] pipeline: ✅ Wrote signal [5/10] Stop Building AI Agents Just Because You Can @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:20,151 [INFO] pipeline: ✅ Wrote signal [5/10] Got an unofficial better role with imposter syndrome as side effect @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:21,482 [INFO] pipeline: ✅ Wrote signal [5/10] PM without a strong tech background building AI products in a non-product org, making progress, but feeling stuck on execution. Seeking advice. @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:22,305 [INFO] pipeline: ✅ Wrote signal [5/10] How to deal with a "kinda" promotion @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:23,112 [INFO] pipeline: ✅ Wrote signal [5/10] Staying Sane with Impossible Pace @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:23,913 [INFO] pipeline: ✅ Wrote signal [5/10] What should a head of product do during the ideation, design and development of a feature? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:24,757 [INFO] pipeline: ✅ Wrote signal [5/10] Is Product Management the most thankless job ever? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:25,745 [INFO] pipeline: ✅ Wrote signal [5/10] Fixing one problem at a time? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:26,744 [INFO] pipeline: ✅ Wrote signal [5/10] Two technical co-founders? @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:27,631 [INFO] pipeline: ✅ Wrote signal [7/10] Technical Product Manager - Integrations @JustPark in Dallas @ Unknown (Reddit) (reddit)
+2026-03-04 06:59:27,635 [INFO] scheduler: ✅ RedditCollector: 700 signals → 34 new written
+2026-03-04 06:59:27,637 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-04 06:59:29,465 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 06:59:29,952 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-04 06:59:35,180 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/senior-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 06:59:35,686 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-04 06:59:41,105 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/head-of-product-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 06:59:41,935 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-04 06:59:47,160 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-lead-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 06:59:47,995 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-04 06:59:53,386 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/group-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 06:59:53,801 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-04 06:59:56,309 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Andi-Co Australia (seek)
+2026-03-04 06:59:57,221 [INFO] pipeline: ✅ Wrote signal [7/10] Market Product Manager @ Fisher & Paykel Appliances (seek)
+2026-03-04 06:59:58,106 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Latitude IT (seek)
+2026-03-04 06:59:58,969 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ LT Network (seek)
+2026-03-04 06:59:59,826 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Private Advertiser (seek)
+2026-03-04 07:00:00,725 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ ScaleUp Recruitment (seek)
+2026-03-04 07:00:01,749 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager (On-site) @ Handy Finance (seek)
+2026-03-04 07:00:02,614 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Etex Australia Pty Ltd (seek)
+2026-03-04 07:00:03,450 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ DuluxGroup (seek)
+2026-03-04 07:00:04,252 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ Cadence Connect (seek)
+2026-03-04 07:00:05,074 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ Alinta Energy (seek)
+2026-03-04 07:00:05,870 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ FYI SOFTWARE PTY LTD (seek)
+2026-03-04 07:00:06,732 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Downer EDI Limited (seek)
+2026-03-04 07:00:07,561 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Andi-Co Australia (seek)
+2026-03-04 07:00:08,392 [INFO] pipeline: ✅ Wrote signal [7/10] Market Product Manager @ Fisher & Paykel Appliances (seek)
+2026-03-04 07:00:09,284 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager (NBN & MVNO) @ Pivotel Satellite Pty Limited (seek)
+2026-03-04 07:00:10,093 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager (Wireless Cameras, Interactive Whiteboards & Pro AV Solutions) @ Dahua Technology Australia Pty Ltd (seek)
+2026-03-04 07:00:10,926 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ TABCORP (seek)
+2026-03-04 07:00:11,786 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager - Sydney | High-Growth FinTech | Funds & Registry @ The Argyle Network (seek)
+2026-03-04 07:00:12,706 [INFO] pipeline: ✅ Wrote signal [5/10] Associate Director AI Product Management @ Optus (seek)
+2026-03-04 07:00:13,547 [INFO] pipeline: ✅ Wrote signal [5/10] Senior Product Manager @ Westpac Commercial Banking (seek)
+2026-03-04 07:00:14,550 [INFO] pipeline: ✅ Wrote signal [5/10] Associate Director AI Product Management @ Optus (seek)
+2026-03-04 07:00:15,396 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ TheDriveGroup (seek)
+2026-03-04 07:00:16,274 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Roller Software (seek)
+2026-03-04 07:00:17,117 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ i-Pharm Consulting Australia Pty Ltd (seek)
+2026-03-04 07:00:17,926 [INFO] pipeline: ✅ Wrote signal [5/10] Head of Product @ Picklebet (seek)
+2026-03-04 07:00:18,935 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product - Media & Digital Platform @ Pathway Search (seek)
+2026-03-04 07:00:19,776 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product @ Think Talent (seek)
+2026-03-04 07:00:20,612 [INFO] pipeline: ✅ Wrote signal [5/10] Head of Product Marketing and GTM @ ReelWork (seek)
+2026-03-04 07:00:21,510 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product & Marketing @ Beyond Travel Pty Ltd (seek)
+2026-03-04 07:00:22,389 [INFO] pipeline: ✅ Wrote signal [5/10] Head of Product Strategy & Proposition (11 Months) @ CBHS Health Fund Limited (seek)
+2026-03-04 07:00:23,252 [INFO] pipeline: ✅ Wrote signal [5/10] Education and Product Lead @ KX Pilates (seek)
+2026-03-04 07:00:24,078 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager- Digital Experience @ Ticketek Entertainment Group (seek)
+2026-03-04 07:00:24,910 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Protecht Group (seek)
+2026-03-04 07:00:25,746 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Protecht Group (seek)
+2026-03-04 07:00:26,712 [INFO] pipeline: ✅ Wrote signal [5/10] Group Product Manager - Hawthorn East @ Coles (seek)
+2026-03-04 07:00:27,774 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Protecht Group (seek)
+2026-03-04 07:00:28,760 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Protecht Group (seek)
+2026-03-04 07:00:29,582 [INFO] pipeline: ✅ Wrote signal [7/10] Technical Product Manager – Agentic AI (6-Month Contract) @ Sirius Technology NSW (seek)
+2026-03-04 07:00:30,544 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager- Flexible Packaging @ Columbit (seek)
+2026-03-04 07:00:30,544 [INFO] scheduler: ✅ SeekCollector: 110 signals → 40 new written
+2026-03-04 07:00:30,545 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-04 07:00:32,396 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:34,707 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:37,011 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:37,018 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'product manager': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=product+manager&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:00:42,640 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=senior+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:44,967 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=senior+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:47,365 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=senior+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:47,369 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'senior product manager': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=senior+product+manager&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:00:53,027 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=head+of+product&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:55,384 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=head+of+product&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:57,740 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=head+of+product&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:00:57,744 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'head of product': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=head+of+product&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:01:03,372 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+lead&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:01:05,662 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+lead&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:01:08,081 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+lead&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:01:08,083 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'product lead': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=product+lead&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:01:13,761 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=group+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:01:16,090 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=group+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:01:18,438 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=group+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:01:18,446 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'group product manager': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=group+product+manager&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:01:21,459 [INFO] scheduler: ✅ IndeedCollector: 0 signals → 0 new written
+2026-03-04 07:01:21,459 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-04 07:01:23,128 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:01:23,201 [INFO] collectors.jora_collector: [Jora] 'product manager': 12 listings
+2026-03-04 07:01:28,670 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=head+of+product&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:01:28,719 [INFO] collectors.jora_collector: [Jora] 'head of product': 19 listings
+2026-03-04 07:01:34,110 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+lead&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:01:34,187 [INFO] collectors.jora_collector: [Jora] 'product lead': 16 listings
+2026-03-04 07:01:35,965 [INFO] scheduler: ✅ JoraCollector: 47 signals → 0 new written
+2026-03-04 07:01:35,966 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-04 07:01:37,405 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:01:39,522 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:01:41,640 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:01:41,642 [WARNING] collectors.wellfound_collector: [Wellfound] Search failed (product-manager/australia): Client error '403 Forbidden' for url 'https://wellfound.com/jobs?role=product-manager&location=australia'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-04 07:01:48,249 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 403 Forbidden"
+2026-03-04 07:01:50,373 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 403 Forbidden"
+2026-03-04 07:01:52,496 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 403 Forbidden"
+2026-03-04 07:01:52,497 [WARNING] collectors.wellfound_collector: [Wellfound] Search failed (product-manager/remote): Client error '403 Forbidden' for url 'https://wellfound.com/jobs?role=product-manager&location=remote'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-04 07:01:58,933 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=head-of-product&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:02:01,062 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=head-of-product&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:02:03,180 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=head-of-product&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:02:03,182 [WARNING] collectors.wellfound_collector: [Wellfound] Search failed (head-of-product/australia): Client error '403 Forbidden' for url 'https://wellfound.com/jobs?role=head-of-product&location=australia'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-04 07:02:06,222 [INFO] scheduler: ✅ WellfoundCollector: 0 signals → 0 new written
+2026-03-04 07:02:06,233 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:02:06,233 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:02:06,233 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:02:06,233 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:02:06,233 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:02:06,234 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:02:06,234 [INFO] scheduler: Scheduler configured.
+2026-03-04 07:02:06,235 [INFO] apscheduler.scheduler: Added job "ATS / Careers Page Collector" to job store "default"
+2026-03-04 07:02:06,236 [INFO] apscheduler.scheduler: Added job "Reddit Collector" to job store "default"
+2026-03-04 07:02:06,236 [INFO] apscheduler.scheduler: Added job "SeekCollector" to job store "default"
+2026-03-04 07:02:06,236 [INFO] apscheduler.scheduler: Added job "IndeedCollector" to job store "default"
+2026-03-04 07:02:06,236 [INFO] apscheduler.scheduler: Added job "JoraCollector" to job store "default"
+2026-03-04 07:02:06,236 [INFO] apscheduler.scheduler: Added job "WellfoundCollector" to job store "default"
+2026-03-04 07:02:06,236 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-04 07:02:06,236 [INFO] scheduler: Scheduler started. Press Ctrl+C to stop.
+2026-03-04 07:02:06,236 [INFO] __main__: ============================================================
+2026-03-04 07:02:06,236 [INFO] __main__: AU PM Signal Engine is running.
+2026-03-04 07:02:06,236 [INFO] __main__: Sheet: https://docs.google.com/spreadsheets/d/1hgNnMlTLtQF_3fiGkQilC5QntVbalpSEIOP5r5deiis/edit
+2026-03-04 07:02:06,237 [INFO] __main__: Press Ctrl+C to stop.
+2026-03-04 07:02:06,237 [INFO] __main__: ============================================================
+2026-03-04 07:03:41,101 [INFO] apscheduler.scheduler: Scheduler has been shut down
+2026-03-04 07:03:41,103 [INFO] scheduler: Scheduler stopped.
+2026-03-04 07:03:41,104 [INFO] __main__: Signal engine stopped.
+2026-03-04 07:21:06,988 [INFO] __main__: Connecting to Google Sheets...
+2026-03-04 07:21:09,494 [INFO] sheets.client: All tabs verified.
+2026-03-04 07:21:09,494 [INFO] alerter: Alerter: no Slack webhook configured — alerts disabled.
+2026-03-04 07:21:09,495 [INFO] __main__: Slack alerts: disabled (set SLACK_WEBHOOK_URL to enable)
+2026-03-04 07:21:09,635 [INFO] __main__: Running initial pass of all collectors...
+2026-03-04 07:21:09,635 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-04 07:21:15,604 [INFO] scheduler: ✅ ATSCollector: 0 signals → 0 new written
+2026-03-04 07:21:15,607 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-04 07:21:18,449 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:19,699 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:20,638 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:21,562 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:22,428 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:23,645 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:24,806 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:25,878 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:27,068 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:27,912 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:28,766 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:29,584 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:30,610 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:31,856 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:33,071 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:34,157 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:35,283 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:36,459 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:38,049 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:39,299 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:40,432 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:41,381 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:42,318 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:43,391 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:44,143 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:21:45,049 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=hiring+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:21:46,347 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=looking+for+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:21:47,845 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=we're+hiring+PM+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:21:50,679 [INFO] scheduler: ✅ RedditCollector: 4 signals → 0 new written
+2026-03-04 07:21:50,680 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-04 07:21:52,356 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:21:53,139 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-04 07:21:58,508 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/senior-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:21:58,996 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-04 07:22:04,318 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/head-of-product-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:22:05,032 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-04 07:22:10,257 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-lead-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:22:11,003 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-04 07:22:16,483 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/group-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:22:16,877 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-04 07:22:18,745 [INFO] scheduler: ✅ SeekCollector: 110 signals → 0 new written
+2026-03-04 07:22:18,746 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-04 07:22:20,478 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 403 Forbidden"
+2026-03-04 07:22:22,875 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 403 Forbidden"
+2026-03-04 07:22:25,230 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:25,237 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'product manager': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=product+manager&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:22:30,973 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=senior+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:33,297 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=senior+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:35,597 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=senior+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:35,603 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'senior product manager': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=senior+product+manager&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:22:41,264 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=head+of+product&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:43,562 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=head+of+product&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:45,939 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=head+of+product&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:45,946 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'head of product': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=head+of+product&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:22:51,651 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+lead&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:53,969 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+lead&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:56,316 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=product+lead&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:22:56,319 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'product lead': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=product+lead&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:23:02,050 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=group+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:23:04,331 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=group+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:23:06,637 [INFO] httpx: HTTP Request: GET https://au.indeed.com/rss?q=group+product+manager&l=Australia&sort=date&limit=25 "HTTP/1.1 404 Not Found"
+2026-03-04 07:23:06,645 [WARNING] collectors.indeed_collector: [Indeed] RSS failed for 'group product manager': Client error '404 Not Found' for url 'https://au.indeed.com/rss?q=group+product+manager&l=Australia&sort=date&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-03-04 07:23:09,852 [INFO] scheduler: ✅ IndeedCollector: 0 signals → 0 new written
+2026-03-04 07:23:09,852 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-04 07:23:11,681 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:23:11,729 [INFO] collectors.jora_collector: [Jora] 'product manager': 12 listings
+2026-03-04 07:23:18,024 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=head+of+product&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:23:18,294 [INFO] collectors.jora_collector: [Jora] 'head of product': 12 listings
+2026-03-04 07:23:23,726 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+lead&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:23:23,773 [INFO] collectors.jora_collector: [Jora] 'product lead': 15 listings
+2026-03-04 07:23:25,595 [INFO] scheduler: ✅ JoraCollector: 39 signals → 0 new written
+2026-03-04 07:23:25,596 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-04 07:23:27,100 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:29,221 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:31,441 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:31,442 [WARNING] collectors.wellfound_collector: [Wellfound] Search failed (product-manager/australia): Client error '403 Forbidden' for url 'https://wellfound.com/jobs?role=product-manager&location=australia'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-04 07:23:37,943 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:40,074 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:42,201 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:42,202 [WARNING] collectors.wellfound_collector: [Wellfound] Search failed (product-manager/remote): Client error '403 Forbidden' for url 'https://wellfound.com/jobs?role=product-manager&location=remote'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-04 07:23:48,612 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=head-of-product&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:50,739 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=head-of-product&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:52,867 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=head-of-product&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:23:52,869 [WARNING] collectors.wellfound_collector: [Wellfound] Search failed (head-of-product/australia): Client error '403 Forbidden' for url 'https://wellfound.com/jobs?role=head-of-product&location=australia'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-04 07:23:56,117 [INFO] scheduler: ✅ WellfoundCollector: 0 signals → 0 new written
+2026-03-04 07:23:56,124 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:23:56,124 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:23:56,124 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:23:56,124 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:23:56,124 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:23:56,125 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:23:56,125 [INFO] scheduler: Scheduler configured.
+2026-03-04 07:23:56,127 [INFO] apscheduler.scheduler: Added job "ATS / Careers Page Collector" to job store "default"
+2026-03-04 07:23:56,128 [INFO] apscheduler.scheduler: Added job "Reddit Collector" to job store "default"
+2026-03-04 07:23:56,128 [INFO] apscheduler.scheduler: Added job "SeekCollector" to job store "default"
+2026-03-04 07:23:56,128 [INFO] apscheduler.scheduler: Added job "IndeedCollector" to job store "default"
+2026-03-04 07:23:56,128 [INFO] apscheduler.scheduler: Added job "JoraCollector" to job store "default"
+2026-03-04 07:23:56,128 [INFO] apscheduler.scheduler: Added job "WellfoundCollector" to job store "default"
+2026-03-04 07:23:56,128 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-04 07:23:56,131 [INFO] scheduler: Scheduler started. Press Ctrl+C to stop.
+2026-03-04 07:23:56,131 [INFO] __main__: ============================================================
+2026-03-04 07:23:56,131 [INFO] __main__: AU PM Signal Engine is running.
+2026-03-04 07:23:56,132 [INFO] __main__: Sheet: https://docs.google.com/spreadsheets/d/1hgNnMlTLtQF_3fiGkQilC5QntVbalpSEIOP5r5deiis/edit
+2026-03-04 07:23:56,134 [INFO] __main__: Press Ctrl+C to stop.
+2026-03-04 07:23:56,134 [INFO] __main__: ============================================================
+2026-03-04 07:24:46,903 [INFO] apscheduler.scheduler: Scheduler has been shut down
+2026-03-04 07:24:46,905 [INFO] scheduler: Scheduler stopped.
+2026-03-04 07:24:46,905 [INFO] __main__: Signal engine stopped.
+2026-03-04 07:27:37,061 [INFO] __main__: Connecting to Google Sheets...
+2026-03-04 07:27:39,947 [INFO] sheets.client: All tabs verified.
+2026-03-04 07:27:39,947 [INFO] alerter: Alerter: no Slack webhook configured — alerts disabled.
+2026-03-04 07:27:39,947 [INFO] __main__: Slack alerts: disabled (set SLACK_WEBHOOK_URL to enable)
+2026-03-04 07:27:39,947 [INFO] __main__: Running all collectors (single pass)...
+2026-03-04 07:27:40,084 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-04 07:27:45,856 [INFO] scheduler: ✅ ATSCollector: 0 signals → 0 new written
+2026-03-04 07:27:45,860 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-04 07:27:48,187 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:49,230 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:50,065 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:50,923 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:51,770 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:53,345 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:54,238 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:55,383 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:56,473 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:57,128 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/ProductManagement/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:57,956 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:58,797 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:27:59,906 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:01,085 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:02,214 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:03,352 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:04,273 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:05,082 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:06,224 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:06,832 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:07,724 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:08,289 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:09,131 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:09,977 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:10,599 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:28:11,449 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=hiring+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:28:12,874 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=looking+for+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:28:14,055 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=we're+hiring+PM+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:28:16,831 [INFO] scheduler: ✅ RedditCollector: 4 signals → 0 new written
+2026-03-04 07:28:16,832 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-04 07:28:18,880 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:28:19,668 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-04 07:28:25,031 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/senior-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:28:25,766 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-04 07:28:30,987 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/head-of-product-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:28:31,688 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-04 07:28:36,971 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-lead-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:28:37,871 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-04 07:28:43,090 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/group-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:28:43,943 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-04 07:28:46,230 [INFO] scheduler: ✅ SeekCollector: 110 signals → 0 new written
+2026-03-04 07:28:46,230 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-04 07:28:48,216 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:28:48,626 [INFO] collectors.indeed_collector: [Indeed] 'product manager': 16 listings
+2026-03-04 07:28:54,233 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=senior+product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:28:54,705 [INFO] collectors.indeed_collector: [Indeed] 'senior product manager': 16 listings
+2026-03-04 07:29:00,314 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=head+of+product&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:29:00,677 [INFO] collectors.indeed_collector: [Indeed] 'head of product': 16 listings
+2026-03-04 07:29:06,217 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=product+lead&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:29:06,575 [INFO] collectors.indeed_collector: [Indeed] 'product lead': 16 listings
+2026-03-04 07:29:12,158 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=group+product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:29:12,535 [INFO] collectors.indeed_collector: [Indeed] 'group product manager': 16 listings
+2026-03-04 07:29:15,520 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager - Apps @ carsales (indeed)
+2026-03-04 07:29:16,542 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager - Commercial Fit Out @ CSR (indeed)
+2026-03-04 07:29:17,459 [INFO] pipeline: ✅ Wrote signal [7/10] Product Management Lead Specialist (Commercial) @ Insurance Australia Group (indeed)
+2026-03-04 07:29:18,392 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager - Hybrid @ DuluxGroup (indeed)
+2026-03-04 07:29:19,298 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Downer Group (indeed)
+2026-03-04 07:29:20,231 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Origin Energy (indeed)
+2026-03-04 07:29:21,160 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Macquarie Group Limited (indeed)
+2026-03-04 07:29:21,979 [INFO] pipeline: ✅ Wrote signal [7/10] Director, Product Management @ Infor (indeed)
+2026-03-04 07:29:22,796 [INFO] pipeline: ✅ Wrote signal [7/10] Growth Product Manager @ Freelancer.com (indeed)
+2026-03-04 07:29:23,719 [INFO] pipeline: ✅ Wrote signal [7/10] Digital Product Manager @ Telstra Business Technology Centre Perth South (indeed)
+2026-03-04 07:29:24,510 [INFO] pipeline: ✅ Wrote signal [7/10] Digital Product Manager @ Telstra Business Technology Centre Perth South (indeed)
+2026-03-04 07:29:25,385 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager – Savings & Everyday Banking @ MyState Limited (indeed)
+2026-03-04 07:29:26,387 [INFO] pipeline: ✅ Wrote signal [5/10] Senior Product Manager @ Westpac Group (indeed)
+2026-03-04 07:29:27,279 [INFO] pipeline: ✅ Wrote signal [7/10] Associate Director, Product Management @ Standard Chartered (indeed)
+2026-03-04 07:29:28,231 [INFO] pipeline: ✅ Wrote signal [5/10] Associate Director AI Product Management @ Optus (indeed)
+2026-03-04 07:29:29,036 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product - Datascape @ Datacom (indeed)
+2026-03-04 07:29:29,936 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product Marketing @ MYOB (indeed)
+2026-03-04 07:29:30,814 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product Marketing @ Axsys (indeed)
+2026-03-04 07:29:31,713 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product Growth @ Careers at Eucalyptus (indeed)
+2026-03-04 07:29:32,633 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Tabcorp (indeed)
+2026-03-04 07:29:33,545 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ Alinta Energy (indeed)
+2026-03-04 07:29:34,409 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Macquarie Group Limited (indeed)
+2026-03-04 07:29:35,307 [INFO] pipeline: ✅ Wrote signal [5/10] Assistant Product Manager (6 Month Parental Leave Cover) @ SUNNY QUEEN PTY LIMITED (indeed)
+2026-03-04 07:29:36,218 [INFO] pipeline: ✅ Wrote signal [5/10] Group Product Manager @ Coles Group (indeed)
+2026-03-04 07:29:37,075 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ NCS Australia (indeed)
+2026-03-04 07:29:37,903 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager- Digital Experience @ Ticketek Entertainment Group (indeed)
+2026-03-04 07:29:38,798 [INFO] pipeline: ✅ Wrote signal [5/10] Technical Product Manager @ Franklin Electric (indeed)
+2026-03-04 07:29:39,703 [INFO] pipeline: ✅ Wrote signal [5/10] Casualty Technical Product Lead, APAC @ AIG Australia Limited (indeed)
+2026-03-04 07:29:40,638 [INFO] pipeline: ✅ Wrote signal [7/10] Engagement Manager, Engagement Leads & Product Manager @ Department of Finance (indeed)
+2026-03-04 07:29:40,638 [INFO] scheduler: ✅ IndeedCollector: 80 signals → 29 new written
+2026-03-04 07:29:40,639 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-04 07:29:43,106 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:29:43,388 [INFO] collectors.jora_collector: [Jora] 'product manager': 12 listings
+2026-03-04 07:29:49,159 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=head+of+product&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:29:49,229 [INFO] collectors.jora_collector: [Jora] 'head of product': 12 listings
+2026-03-04 07:29:54,615 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+lead&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:29:54,661 [INFO] collectors.jora_collector: [Jora] 'product lead': 12 listings
+2026-03-04 07:29:56,470 [INFO] scheduler: ✅ JoraCollector: 36 signals → 0 new written
+2026-03-04 07:29:56,471 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-04 07:29:58,133 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:30:02,228 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 200 OK"
+2026-03-04 07:30:04,903 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 200 OK"
+2026-03-04 07:30:06,700 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=head-of-product&location=australia "HTTP/1.1 200 OK"
+2026-03-04 07:30:08,670 [INFO] scheduler: ✅ WellfoundCollector: 0 signals → 0 new written
+2026-03-04 07:30:08,671 [INFO] __main__: Single pass complete. Check hiring_signals tab in Google Sheets.
+2026-03-04 07:35:59,794 [INFO] __main__: Connecting to Google Sheets...
+2026-03-04 07:36:02,767 [INFO] sheets.client: All tabs verified.
+2026-03-04 07:36:02,767 [INFO] __main__: Slack alerts: enabled
+2026-03-04 07:36:02,897 [INFO] __main__: Running initial pass of all collectors...
+2026-03-04 07:36:02,897 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-04 07:36:08,526 [INFO] scheduler: ✅ ATSCollector: 0 signals → 0 new written
+2026-03-04 07:36:08,529 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-04 07:36:11,226 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:12,510 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:13,393 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:14,346 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:15,378 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:16,463 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:17,527 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:18,763 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:20,104 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:21,146 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:22,148 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:23,661 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:24,813 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:26,584 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:27,667 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:28,585 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:29,513 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:30,545 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:31,552 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:32,446 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-04 07:36:33,528 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=hiring+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:36:34,763 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=looking+for+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:36:36,071 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=we're+hiring+PM+australia&sort=new&limit=25&type=link "HTTP/1.1 200 OK"
+2026-03-04 07:36:38,817 [INFO] scheduler: ✅ RedditCollector: 1 signals → 0 new written
+2026-03-04 07:36:38,818 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-04 07:36:41,181 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:36:41,985 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-04 07:36:47,230 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/senior-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:36:47,729 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-04 07:36:53,367 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/head-of-product-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:36:53,872 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-04 07:36:59,196 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-lead-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:37:00,703 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-04 07:37:05,972 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/group-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-04 07:37:06,576 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-04 07:37:08,381 [INFO] scheduler: ✅ SeekCollector: 110 signals → 0 new written
+2026-03-04 07:37:08,381 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-04 07:37:10,286 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:37:10,752 [INFO] collectors.indeed_collector: [Indeed] 'product manager': 16 listings
+2026-03-04 07:37:16,248 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=senior+product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:37:16,685 [INFO] collectors.indeed_collector: [Indeed] 'senior product manager': 16 listings
+2026-03-04 07:37:22,229 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=head+of+product&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:37:22,556 [INFO] collectors.indeed_collector: [Indeed] 'head of product': 16 listings
+2026-03-04 07:37:28,075 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=product+lead&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:37:28,534 [INFO] collectors.indeed_collector: [Indeed] 'product lead': 16 listings
+2026-03-04 07:37:34,025 [INFO] httpx: HTTP Request: GET https://au.indeed.com/jobs?q=group+product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:37:34,462 [INFO] collectors.indeed_collector: [Indeed] 'group product manager': 16 listings
+2026-03-04 07:37:37,469 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager - Apps @ carsales (indeed)
+2026-03-04 07:37:37,855 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:37:37,858 [INFO] alerter: Slack alert sent for carsales — Senior Product Manager - Apps
+2026-03-04 07:37:40,332 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager - Commercial Fit Out @ CSR (indeed)
+2026-03-04 07:37:41,272 [INFO] pipeline: ✅ Wrote signal [7/10] Product Management Lead Specialist (Commercial) @ Insurance Australia Group (indeed)
+2026-03-04 07:37:41,645 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:37:41,646 [INFO] alerter: Slack alert sent for Insurance Australia Group — Product Management Lead Specialist (Commercial)
+2026-03-04 07:37:43,897 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager - Hybrid @ DuluxGroup (indeed)
+2026-03-04 07:37:44,760 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Downer Group (indeed)
+2026-03-04 07:37:45,129 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:37:45,130 [INFO] alerter: Slack alert sent for Downer Group — Product Manager
+2026-03-04 07:37:47,363 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Origin Energy (indeed)
+2026-03-04 07:37:48,219 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Macquarie Group Limited (indeed)
+2026-03-04 07:37:48,587 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:37:48,587 [INFO] alerter: Slack alert sent for Macquarie Group Limited — Product Manager
+2026-03-04 07:37:50,815 [INFO] pipeline: ✅ Wrote signal [7/10] Director, Product Management @ Infor (indeed)
+2026-03-04 07:37:51,188 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:37:51,189 [INFO] alerter: Slack alert sent for Infor — Director, Product Management
+2026-03-04 07:37:53,568 [INFO] pipeline: ✅ Wrote signal [7/10] Growth Product Manager @ Freelancer.com (indeed)
+2026-03-04 07:37:53,946 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:37:53,948 [INFO] alerter: Slack alert sent for Freelancer.com — Growth Product Manager
+2026-03-04 07:37:56,139 [INFO] pipeline: ✅ Wrote signal [7/10] Digital Product Manager @ Telstra Business Technology Centre Perth South (indeed)
+2026-03-04 07:37:56,506 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:37:56,507 [INFO] alerter: Slack alert sent for Telstra Business Technology Centre Perth South — Digital Product Manager
+2026-03-04 07:37:59,006 [INFO] pipeline: ✅ Wrote signal [7/10] Digital Product Manager @ Telstra Business Technology Centre Perth South (indeed)
+2026-03-04 07:37:59,378 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:37:59,379 [INFO] alerter: Slack alert sent for Telstra Business Technology Centre Perth South — Digital Product Manager
+2026-03-04 07:38:01,678 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager – Savings & Everyday Banking @ MyState Limited (indeed)
+2026-03-04 07:38:02,050 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:02,051 [INFO] alerter: Slack alert sent for MyState Limited — Senior Product Manager – Savings & Everyday Banking
+2026-03-04 07:38:05,194 [INFO] pipeline: ✅ Wrote signal [5/10] Senior Product Manager @ Westpac Group (indeed)
+2026-03-04 07:38:06,247 [INFO] pipeline: ✅ Wrote signal [7/10] Associate Director, Product Management @ Standard Chartered (indeed)
+2026-03-04 07:38:06,615 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:06,616 [INFO] alerter: Slack alert sent for Standard Chartered — Associate Director, Product Management
+2026-03-04 07:38:09,017 [INFO] pipeline: ✅ Wrote signal [5/10] Associate Director AI Product Management @ Optus (indeed)
+2026-03-04 07:38:10,670 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product - Datascape @ Datacom (indeed)
+2026-03-04 07:38:11,037 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:11,038 [INFO] alerter: Slack alert sent for Datacom — Head of Product - Datascape
+2026-03-04 07:38:13,464 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product Marketing @ MYOB (indeed)
+2026-03-04 07:38:13,831 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:13,832 [INFO] alerter: Slack alert sent for MYOB — Head of Product Marketing
+2026-03-04 07:38:16,222 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product Marketing @ Axsys (indeed)
+2026-03-04 07:38:16,591 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:16,592 [INFO] alerter: Slack alert sent for Axsys — Head of Product Marketing
+2026-03-04 07:38:18,852 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product Growth @ Careers at Eucalyptus (indeed)
+2026-03-04 07:38:19,217 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:19,218 [INFO] alerter: Slack alert sent for Careers at Eucalyptus — Head of Product Growth
+2026-03-04 07:38:21,534 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Tabcorp (indeed)
+2026-03-04 07:38:21,902 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:21,903 [INFO] alerter: Slack alert sent for Tabcorp — Product Manager
+2026-03-04 07:38:24,206 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ Alinta Energy (indeed)
+2026-03-04 07:38:24,588 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:24,589 [INFO] alerter: Slack alert sent for Alinta Energy — Senior Product Manager
+2026-03-04 07:38:26,995 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Macquarie Group Limited (indeed)
+2026-03-04 07:38:27,357 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:27,358 [INFO] alerter: Slack alert sent for Macquarie Group Limited — Product Manager
+2026-03-04 07:38:29,569 [INFO] pipeline: ✅ Wrote signal [5/10] Assistant Product Manager (6 Month Parental Leave Cover) @ SUNNY QUEEN PTY LIMITED (indeed)
+2026-03-04 07:38:30,545 [INFO] pipeline: ✅ Wrote signal [5/10] Group Product Manager @ Coles Group (indeed)
+2026-03-04 07:38:31,415 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ NCS Australia (indeed)
+2026-03-04 07:38:31,785 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:31,786 [INFO] alerter: Slack alert sent for NCS Australia — Product Manager
+2026-03-04 07:38:34,001 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager- Digital Experience @ Ticketek Entertainment Group (indeed)
+2026-03-04 07:38:34,374 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-04 07:38:34,379 [INFO] alerter: Slack alert sent for Ticketek Entertainment Group — Product Manager- Digital Experience
+2026-03-04 07:38:36,630 [INFO] pipeline: ✅ Wrote signal [5/10] Technical Product Manager @ Franklin Electric (indeed)
+2026-03-04 07:38:37,478 [INFO] pipeline: ✅ Wrote signal [5/10] Casualty Technical Product Lead, APAC @ AIG Australia Limited (indeed)
+2026-03-04 07:38:37,479 [INFO] scheduler: ✅ IndeedCollector: 80 signals → 28 new written
+2026-03-04 07:38:37,479 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-04 07:38:40,886 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:38:41,186 [INFO] collectors.jora_collector: [Jora] 'product manager': 12 listings
+2026-03-04 07:38:48,261 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=head+of+product&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:38:48,302 [INFO] collectors.jora_collector: [Jora] 'head of product': 12 listings
+2026-03-04 07:38:53,691 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+lead&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-04 07:38:53,735 [INFO] collectors.jora_collector: [Jora] 'product lead': 12 listings
+2026-03-04 07:38:55,448 [INFO] scheduler: ✅ JoraCollector: 36 signals → 0 new written
+2026-03-04 07:38:55,449 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-04 07:38:56,922 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-04 07:39:01,330 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 200 OK"
+2026-03-04 07:39:03,904 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 200 OK"
+2026-03-04 07:39:06,031 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=head-of-product&location=australia "HTTP/1.1 200 OK"
+2026-03-04 07:39:08,230 [INFO] scheduler: ✅ WellfoundCollector: 0 signals → 0 new written
+2026-03-04 07:39:08,235 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:39:08,236 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:39:08,236 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:39:08,236 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:39:08,237 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:39:08,237 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-04 07:39:08,237 [INFO] scheduler: Scheduler configured.
+2026-03-04 07:39:08,240 [INFO] apscheduler.scheduler: Added job "ATS / Careers Page Collector" to job store "default"
+2026-03-04 07:39:08,240 [INFO] apscheduler.scheduler: Added job "Reddit Collector" to job store "default"
+2026-03-04 07:39:08,240 [INFO] apscheduler.scheduler: Added job "SeekCollector" to job store "default"
+2026-03-04 07:39:08,240 [INFO] apscheduler.scheduler: Added job "IndeedCollector" to job store "default"
+2026-03-04 07:39:08,240 [INFO] apscheduler.scheduler: Added job "JoraCollector" to job store "default"
+2026-03-04 07:39:08,240 [INFO] apscheduler.scheduler: Added job "WellfoundCollector" to job store "default"
+2026-03-04 07:39:08,240 [INFO] apscheduler.scheduler: Scheduler started
+2026-03-04 07:39:08,241 [INFO] scheduler: Scheduler started. Press Ctrl+C to stop.
+2026-03-04 07:39:08,241 [INFO] __main__: ============================================================
+2026-03-04 07:39:08,241 [INFO] __main__: AU PM Signal Engine is running.
+2026-03-04 07:39:08,241 [INFO] __main__: Sheet: https://docs.google.com/spreadsheets/d/1hgNnMlTLtQF_3fiGkQilC5QntVbalpSEIOP5r5deiis/edit
+2026-03-04 07:39:08,241 [INFO] __main__: Press Ctrl+C to stop.
+2026-03-04 07:39:08,241 [INFO] __main__: ============================================================
+2026-03-11 03:43:37,527 [INFO] __main__: Connecting to Google Sheets...
+2026-03-11 03:43:39,648 [INFO] sheets.client: All tabs verified.
+2026-03-11 03:43:39,648 [INFO] __main__: Slack alerts: enabled
+2026-03-11 03:43:39,648 [INFO] __main__: Running all collectors (single pass)...
+2026-03-11 03:43:39,866 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-11 03:43:44,121 [INFO] scheduler: ✅ ATSCollector: 0 signals → 0 new written
+2026-03-11 03:43:44,123 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-11 03:43:46,253 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 200 OK"
+2026-03-11 03:43:47,117 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:43:49,596 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:43:52,120 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:43:52,242 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/startups): Client error '403 Blocked' for url 'https://www.reddit.com/r/startups/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:43:53,841 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:43:56,372 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:43:58,911 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:43:59,029 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/startups): Client error '403 Blocked' for url 'https://www.reddit.com/r/startups/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:01,060 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:03,616 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:06,178 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:06,297 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/startups): Client error '403 Blocked' for url 'https://www.reddit.com/r/startups/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:07,857 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:10,408 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:12,962 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/startups/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:13,081 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/startups): Client error '403 Blocked' for url 'https://www.reddit.com/r/startups/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:14,617 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:17,150 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:19,699 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:19,819 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/forhire): Client error '403 Blocked' for url 'https://www.reddit.com/r/forhire/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:21,387 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:23,931 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:26,480 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:26,597 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/forhire): Client error '403 Blocked' for url 'https://www.reddit.com/r/forhire/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:28,142 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:30,695 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:33,696 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:33,816 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/forhire): Client error '403 Blocked' for url 'https://www.reddit.com/r/forhire/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:35,370 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:37,924 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:40,475 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:40,596 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/forhire): Client error '403 Blocked' for url 'https://www.reddit.com/r/forhire/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:42,224 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:44,770 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:47,322 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/forhire/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:47,439 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/forhire): Client error '403 Blocked' for url 'https://www.reddit.com/r/forhire/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:49,026 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:51,574 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:54,107 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:54,227 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/Entrepreneur): Client error '403 Blocked' for url 'https://www.reddit.com/r/Entrepreneur/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:44:55,853 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:44:58,405 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:00,955 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:01,083 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/Entrepreneur): Client error '403 Blocked' for url 'https://www.reddit.com/r/Entrepreneur/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:02,687 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:05,230 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:07,762 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:07,881 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/Entrepreneur): Client error '403 Blocked' for url 'https://www.reddit.com/r/Entrepreneur/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:09,417 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:11,966 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:14,506 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:14,622 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/Entrepreneur): Client error '403 Blocked' for url 'https://www.reddit.com/r/Entrepreneur/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:16,215 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:18,755 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:21,305 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/Entrepreneur/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:21,425 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/Entrepreneur): Client error '403 Blocked' for url 'https://www.reddit.com/r/Entrepreneur/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:22,948 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:25,502 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:28,031 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:28,147 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/SaaS): Client error '403 Blocked' for url 'https://www.reddit.com/r/SaaS/search.rss?q=hiring+product+manager+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:29,739 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:32,292 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:34,833 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:34,964 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/SaaS): Client error '403 Blocked' for url 'https://www.reddit.com/r/SaaS/search.rss?q=looking+for+product+manager+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:36,522 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:39,075 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:41,648 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:41,766 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/SaaS): Client error '403 Blocked' for url 'https://www.reddit.com/r/SaaS/search.rss?q=we're+hiring+PM+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:43,387 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:45,926 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:48,510 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:48,630 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/SaaS): Client error '403 Blocked' for url 'https://www.reddit.com/r/SaaS/search.rss?q=product+manager+role+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:50,195 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:52,735 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:55,290 [INFO] httpx: HTTP Request: GET https://www.reddit.com/r/SaaS/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25 "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:55,403 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (r/SaaS): Client error '403 Blocked' for url 'https://www.reddit.com/r/SaaS/search.rss?q=head+of+product+australia&restrict_sr=1&sort=new&limit=25'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:45:57,033 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=hiring+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:45:59,579 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=hiring+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:46:02,144 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=hiring+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:46:02,264 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (reddit_search): Client error '403 Blocked' for url 'https://www.reddit.com/search.rss?q=hiring+product+manager+australia&sort=new&limit=25&type=link'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:46:03,825 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=looking+for+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:46:06,363 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=looking+for+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:46:08,901 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=looking+for+product+manager+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:46:09,020 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (reddit_search): Client error '403 Blocked' for url 'https://www.reddit.com/search.rss?q=looking+for+product+manager+australia&sort=new&limit=25&type=link'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:46:10,603 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=we're+hiring+PM+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:46:13,151 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=we're+hiring+PM+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:46:15,685 [INFO] httpx: HTTP Request: GET https://www.reddit.com/search.rss?q=we're+hiring+PM+australia&sort=new&limit=25&type=link "HTTP/1.1 403 Blocked"
+2026-03-11 03:46:15,804 [WARNING] collectors.reddit_collector: [Reddit] Feed failed (reddit_search): Client error '403 Blocked' for url 'https://www.reddit.com/search.rss?q=we're+hiring+PM+australia&sort=new&limit=25&type=link'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-03-11 03:46:18,448 [INFO] scheduler: ✅ RedditCollector: 0 signals → 0 new written
+2026-03-11 03:46:18,448 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-11 03:46:19,982 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-11 03:46:20,768 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-11 03:46:26,691 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/senior-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-11 03:46:27,589 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-11 03:46:32,840 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/head-of-product-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-11 03:46:33,594 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-11 03:46:38,860 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/product-lead-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-11 03:46:39,703 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-11 03:46:44,912 [INFO] httpx: HTTP Request: GET https://www.seek.com.au/group-product-manager-jobs/in-All-Australia "HTTP/1.1 200 OK"
+2026-03-11 03:46:45,492 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-11 03:46:47,751 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Ploomo (seek)
+2026-03-11 03:46:48,497 [INFO] pipeline: ✅ Wrote signal [7/10] Growth Product Manager @ Freelancer.com (seek)
+2026-03-11 03:46:49,138 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:46:49,138 [INFO] alerter: Slack alert sent for Freelancer.com — Growth Product Manager
+2026-03-11 03:46:51,005 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager - $160-$170k + super + stock @ iterate (seek)
+2026-03-11 03:46:51,554 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:46:51,556 [INFO] alerter: Slack alert sent for iterate — Senior Product Manager - $160-$170k + super + stock
+2026-03-11 03:46:53,452 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Project Pathway Recruitment (seek)
+2026-03-11 03:46:53,993 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:46:53,993 [INFO] alerter: Slack alert sent for Project Pathway Recruitment — Product Manager
+2026-03-11 03:46:55,873 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager - Experimentation @ Compare Club (seek)
+2026-03-11 03:46:56,255 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:46:56,256 [INFO] alerter: Slack alert sent for Compare Club — Product Manager - Experimentation
+2026-03-11 03:46:58,205 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Ploomo (seek)
+2026-03-11 03:46:58,930 [INFO] pipeline: ✅ Wrote signal [5/10] Product Lead (Product Manager / Product Owner) @ Now Corp (seek)
+2026-03-11 03:46:59,742 [INFO] pipeline: ✅ Wrote signal [7/10] Growth Product Manager @ Freelancer.com (seek)
+2026-03-11 03:47:00,118 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:00,121 [INFO] alerter: Slack alert sent for Freelancer.com — Growth Product Manager
+2026-03-11 03:47:02,041 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Microsoft (seek)
+2026-03-11 03:47:03,010 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:03,012 [INFO] alerter: Slack alert sent for Microsoft — Product Manager
+2026-03-11 03:47:04,942 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ ASSA ABLOY (seek)
+2026-03-11 03:47:05,677 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Halcyon Knights Pty Ltd (seek)
+2026-03-11 03:47:06,247 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:06,247 [INFO] alerter: Slack alert sent for Halcyon Knights Pty Ltd — Product Manager
+2026-03-11 03:47:08,214 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager @ Bapcor Limited (seek)
+2026-03-11 03:47:08,980 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Profusion PAC Pty Ltd (seek)
+2026-03-11 03:47:09,350 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:09,351 [INFO] alerter: Slack alert sent for Profusion PAC Pty Ltd — Product Manager
+2026-03-11 03:47:11,255 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Plain English Foundation (seek)
+2026-03-11 03:47:11,622 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:11,622 [INFO] alerter: Slack alert sent for Plain English Foundation — Product Manager
+2026-03-11 03:47:13,623 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager - Payments @ Perigon Group Pty Limited (seek)
+2026-03-11 03:47:14,180 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:14,181 [INFO] alerter: Slack alert sent for Perigon Group Pty Limited — Product Manager - Payments
+2026-03-11 03:47:16,145 [INFO] pipeline: ✅ Wrote signal [5/10] Principal Product Manager @ Department of Communities and Justice (seek)
+2026-03-11 03:47:16,989 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager - Fixed Term Contract @ Volkswagen Financial Services Australia Pty Limited (seek)
+2026-03-11 03:47:17,765 [INFO] pipeline: ✅ Wrote signal [7/10] Staff Product Manager @ SALT SEARCH PTY LTD (seek)
+2026-03-11 03:47:18,312 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:18,313 [INFO] alerter: Slack alert sent for SALT SEARCH PTY LTD — Staff Product Manager
+2026-03-11 03:47:20,198 [INFO] pipeline: ✅ Wrote signal [5/10] Head of Product, The Australian & Prestige @ News Corp Australia (seek)
+2026-03-11 03:47:20,934 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product & Marketing @ Beyond Travel Pty Ltd (seek)
+2026-03-11 03:47:21,301 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:21,302 [INFO] alerter: Slack alert sent for Beyond Travel Pty Ltd — Head of Product & Marketing
+2026-03-11 03:47:23,275 [INFO] pipeline: ✅ Wrote signal [5/10] Head of Product, The Australian & Prestige @ News Corp Australia (seek)
+2026-03-11 03:47:24,043 [INFO] pipeline: ✅ Wrote signal [5/10] Head of Product, Free News & Lifestyle @ News Corp Australia (seek)
+2026-03-11 03:47:24,781 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Trade Window (seek)
+2026-03-11 03:47:25,339 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:25,339 [INFO] alerter: Slack alert sent for Trade Window — Product Manager
+2026-03-11 03:47:27,409 [INFO] pipeline: ✅ Wrote signal [7/10] Group Product Manager - International Payments @ Freelancer.com (seek)
+2026-03-11 03:47:27,966 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:27,967 [INFO] alerter: Slack alert sent for Freelancer.com — Group Product Manager - International Payments
+2026-03-11 03:47:29,890 [INFO] pipeline: ✅ Wrote signal [7/10] Group Product Manager - International Payments @ Freelancer.com (seek)
+2026-03-11 03:47:30,444 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 03:47:30,445 [INFO] alerter: Slack alert sent for Freelancer.com — Group Product Manager - International Payments
+2026-03-11 03:47:31,611 [INFO] scheduler: ✅ SeekCollector: 110 signals → 25 new written
+2026-03-11 03:47:31,611 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-11 03:47:32,735 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+manager&l=Australia&sort=date
+2026-03-11 03:48:04,776 [WARNING] collectors.indeed_collector: [Indeed] 'product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:48:09,781 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=senior+product+manager&l=Australia&sort=date
+2026-03-11 03:48:36,621 [WARNING] collectors.indeed_collector: [Indeed] 'senior product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:48:41,626 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=head+of+product&l=Australia&sort=date
+2026-03-11 03:49:06,822 [WARNING] collectors.indeed_collector: [Indeed] 'head of product': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:49:11,825 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+lead&l=Australia&sort=date
+2026-03-11 03:49:39,640 [WARNING] collectors.indeed_collector: [Indeed] 'product lead': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:49:44,643 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=group+product+manager&l=Australia&sort=date
+2026-03-11 03:50:08,744 [WARNING] collectors.indeed_collector: [Indeed] 'group product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:50:10,302 [INFO] scheduler: ✅ IndeedCollector: 0 signals → 0 new written
+2026-03-11 03:50:10,304 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-11 03:50:14,379 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+manager&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-11 03:50:14,681 [INFO] collectors.jora_collector: [Jora] 'product manager': 11 listings
+2026-03-11 03:50:20,093 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=head+of+product&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-11 03:50:20,146 [INFO] collectors.jora_collector: [Jora] 'head of product': 11 listings
+2026-03-11 03:50:25,536 [INFO] httpx: HTTP Request: GET https://au.jora.com/jobs?q=product+lead&l=Australia&sort=date "HTTP/1.1 200 OK"
+2026-03-11 03:50:25,588 [INFO] collectors.jora_collector: [Jora] 'product lead': 11 listings
+2026-03-11 03:50:27,135 [INFO] scheduler: ✅ JoraCollector: 33 signals → 0 new written
+2026-03-11 03:50:27,136 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-11 03:50:28,481 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 403 Forbidden"
+2026-03-11 03:50:32,700 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=australia "HTTP/1.1 200 OK"
+2026-03-11 03:50:34,846 [INFO] httpx: HTTP Request: GET https://wellfound.com/jobs?role=product-manager&location=remote "HTTP/1.1 200 OK"
+2026-03-11 03:50:40,891 [INFO] __main__: Connecting to Google Sheets...
+2026-03-11 03:50:42,854 [INFO] sheets.client: All tabs verified.
+2026-03-11 03:50:42,855 [INFO] __main__: Slack alerts: enabled
+2026-03-11 03:50:42,855 [INFO] __main__: Running all collectors (single pass)...
+2026-03-11 03:50:43,017 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-11 03:50:47,299 [INFO] scheduler: ✅ ATSCollector: 0 signals → 0 new written
+2026-03-11 03:50:47,299 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-11 03:51:15,433 [INFO] scheduler: ✅ RedditCollector: 1 signals → 0 new written
+2026-03-11 03:51:15,436 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-11 03:51:17,476 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-11 03:51:23,200 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-11 03:51:28,898 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-11 03:51:34,903 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-11 03:51:40,590 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-11 03:51:42,130 [INFO] scheduler: ✅ SeekCollector: 110 signals → 0 new written
+2026-03-11 03:51:42,134 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-11 03:51:43,244 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+manager&l=Australia&sort=date
+2026-03-11 03:52:10,076 [WARNING] collectors.indeed_collector: [Indeed] 'product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:52:15,078 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=senior+product+manager&l=Australia&sort=date
+2026-03-11 03:52:38,508 [WARNING] collectors.indeed_collector: [Indeed] 'senior product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:52:43,512 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=head+of+product&l=Australia&sort=date
+2026-03-11 03:52:44,383 [WARNING] collectors.indeed_collector: [Indeed] 'head of product': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:52:49,389 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+lead&l=Australia&sort=date
+2026-03-11 03:53:14,281 [WARNING] collectors.indeed_collector: [Indeed] 'product lead': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:53:19,284 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=group+product+manager&l=Australia&sort=date
+2026-03-11 03:53:43,142 [WARNING] collectors.indeed_collector: [Indeed] 'group product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 03:53:44,751 [INFO] scheduler: ✅ IndeedCollector: 0 signals → 0 new written
+2026-03-11 03:53:44,751 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-11 03:53:47,402 [INFO] collectors.jora_collector: [Jora] 'product manager': 15 listings
+2026-03-11 03:53:52,839 [INFO] collectors.jora_collector: [Jora] 'head of product': 13 listings
+2026-03-11 03:53:58,237 [INFO] collectors.jora_collector: [Jora] 'product lead': 11 listings
+2026-03-11 03:54:00,233 [INFO] scheduler: ✅ JoraCollector: 39 signals → 0 new written
+2026-03-11 03:54:00,235 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-11 03:54:09,229 [WARNING] collectors.wellfound_collector: [Wellfound] Wellfound blocked with 403 for product-manager/remote. Cloudflare protection active. Skipping — no retry.
+2026-03-11 03:54:15,018 [WARNING] collectors.wellfound_collector: [Wellfound] Wellfound blocked with 403 for head-of-product/australia. Cloudflare protection active. Skipping — no retry.
+2026-03-11 03:54:18,344 [INFO] scheduler: ✅ WellfoundCollector: 0 signals → 0 new written
+2026-03-11 03:54:18,344 [INFO] __main__: Single pass complete. Check hiring_signals tab in Google Sheets.
+2026-03-11 04:13:11,452 [INFO] __main__: Connecting to Google Sheets...
+2026-03-11 04:13:13,439 [INFO] sheets.client: All tabs verified.
+2026-03-11 04:13:13,439 [INFO] __main__: Slack alerts: enabled
+2026-03-11 04:13:13,440 [INFO] __main__: Running all collectors (single pass)...
+2026-03-11 04:13:13,582 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-11 04:13:15,452 [INFO] collectors.ats_collector: [ATS] Scanning: Domain → https://careers.domain.com.au/
+2026-03-11 04:13:19,550 [WARNING] collectors.ats_collector: [ATS] Failed for Domain: Failed to perform, curl: (6) Could not resolve host: careers.domain.com.au. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:13:23,674 [INFO] collectors.ats_collector: [ATS] Scanning: Macquarie Group → https://www.macquarie.com/au/en/careers.html
+2026-03-11 04:13:23,946 [INFO] collectors.ats_collector: [ATS] Macquarie Group: found 0 matching roles
+2026-03-11 04:13:26,949 [INFO] collectors.ats_collector: [ATS] Scanning: Zip Co → https://zip.co/us/careers
+2026-03-11 04:13:30,961 [INFO] collectors.ats_collector: [ATS] Zip Co: found 0 matching roles
+2026-03-11 04:13:33,965 [INFO] collectors.ats_collector: [ATS] Scanning: Tyro Payments → https://www.tyro.com/careers/
+2026-03-11 04:13:42,018 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:13:42,042 [INFO] collectors.ats_collector: [ATS] Tyro Payments: found 6 matching roles
+2026-03-11 04:13:45,047 [INFO] collectors.ats_collector: [ATS] Scanning: Mr Yum → https://careers.mryum.com/
+2026-03-11 04:13:49,096 [WARNING] collectors.ats_collector: [ATS] Failed for Mr Yum: Failed to perform, curl: (6) Could not resolve host: careers.mryum.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:13:53,268 [INFO] collectors.ats_collector: [ATS] Scanning: Go1 → https://www.go1.com/careers
+2026-03-11 04:13:58,941 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:13:58,964 [INFO] collectors.ats_collector: [ATS] Go1: found 0 matching roles
+2026-03-11 04:14:01,972 [INFO] collectors.ats_collector: [ATS] Scanning: Miro → https://miro.com/careers/
+2026-03-11 04:14:08,277 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:14:08,308 [INFO] collectors.ats_collector: [ATS] Miro: found 1 matching roles
+2026-03-11 04:14:11,313 [INFO] collectors.ats_collector: [ATS] Scanning: Kmart Group Tech → https://www.kmart.com.au/careers/tech/
+2026-03-11 04:14:19,965 [WARNING] collectors.ats_collector: [ATS] Failed for Kmart Group Tech: HTTP Error 404: 
+2026-03-11 04:14:24,118 [INFO] collectors.ats_collector: [ATS] Scanning: Woolworths Group → https://wowcareers.com.au/tech
+2026-03-11 04:15:07,939 [WARNING] collectors.ats_collector: [ATS] Failed for Woolworths Group: Failed to perform, curl: (7) Failed to connect to wowcareers.com.au port 443 after 12462 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:15:12,075 [INFO] collectors.ats_collector: [ATS] Scanning: Aussie Broadband → https://www.aussiebroadband.com.au/careers/
+2026-03-11 04:15:16,214 [WARNING] collectors.ats_collector: [ATS] Failed for Aussie Broadband: HTTP Error 403: 
+2026-03-11 04:15:20,310 [INFO] collectors.ats_collector: [ATS] Scanning: Finder → https://www.finder.com.au/careers
+2026-03-11 04:15:25,821 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:15:25,856 [INFO] collectors.ats_collector: [ATS] Finder: found 3 matching roles
+2026-03-11 04:15:28,861 [INFO] collectors.ats_collector: [ATS] Scanning: Pet Circle → https://www.petcircle.com.au/careers
+2026-03-11 04:15:31,049 [INFO] collectors.ats_collector: [ATS] Pet Circle: found 0 matching roles
+2026-03-11 04:15:34,052 [INFO] collectors.ats_collector: [ATS] Scanning: HiPages → https://hipagesgroup.com.au/careers/
+2026-03-11 04:15:35,199 [INFO] collectors.ats_collector: [ATS] HiPages: found 0 matching roles
+2026-03-11 04:15:38,202 [INFO] collectors.ats_collector: [ATS] Scanning: Up Bank → https://up.com.au/careers/
+2026-03-11 04:48:01,297 [INFO] __main__: Connecting to Google Sheets...
+2026-03-11 04:48:03,816 [INFO] sheets.client: All tabs verified.
+2026-03-11 04:48:03,817 [INFO] __main__: Slack alerts: enabled
+2026-03-11 04:48:03,817 [INFO] __main__: Running all collectors (single pass)...
+2026-03-11 04:48:03,979 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-11 04:48:06,429 [INFO] collectors.ats_collector: [ATS] Scanning: Domain → https://careers.domain.com.au/
+2026-03-11 04:48:10,490 [WARNING] collectors.ats_collector: [ATS] Failed for Domain: Failed to perform, curl: (6) Could not resolve host: careers.domain.com.au. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:48:14,933 [INFO] collectors.ats_collector: [ATS] Scanning: Macquarie Group → https://www.macquarie.com/au/en/careers.html
+2026-03-11 04:48:15,209 [INFO] collectors.ats_collector: [ATS] Macquarie Group: found 0 matching roles
+2026-03-11 04:48:18,214 [INFO] collectors.ats_collector: [ATS] Scanning: Zip Co → https://zip.co/us/careers
+2026-03-11 04:48:21,593 [INFO] collectors.ats_collector: [ATS] Zip Co: found 0 matching roles
+2026-03-11 04:48:24,594 [INFO] collectors.ats_collector: [ATS] Scanning: Tyro Payments → https://www.tyro.com/careers/
+2026-03-11 04:48:32,393 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:48:32,412 [INFO] collectors.ats_collector: [ATS] Tyro Payments: found 6 matching roles
+2026-03-11 04:48:35,417 [INFO] collectors.ats_collector: [ATS] Scanning: Mr Yum → https://careers.mryum.com/
+2026-03-11 04:48:39,468 [WARNING] collectors.ats_collector: [ATS] Failed for Mr Yum: Failed to perform, curl: (6) Could not resolve host: careers.mryum.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:48:43,693 [INFO] collectors.ats_collector: [ATS] Scanning: Go1 → https://www.go1.com/careers
+2026-03-11 04:48:49,430 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:48:49,454 [INFO] collectors.ats_collector: [ATS] Go1: found 0 matching roles
+2026-03-11 04:48:52,459 [INFO] collectors.ats_collector: [ATS] Scanning: Miro → https://miro.com/careers/
+2026-03-11 04:48:58,638 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:48:58,661 [INFO] collectors.ats_collector: [ATS] Miro: found 1 matching roles
+2026-03-11 04:49:01,666 [INFO] collectors.ats_collector: [ATS] Scanning: Kmart Group Tech → https://www.kmart.com.au/careers/tech/
+2026-03-11 04:49:11,654 [WARNING] collectors.ats_collector: [ATS] Failed for Kmart Group Tech: HTTP Error 404: 
+2026-03-11 04:49:15,868 [INFO] collectors.ats_collector: [ATS] Scanning: Woolworths Group → https://wowcareers.com.au/tech
+2026-03-11 04:50:04,884 [WARNING] collectors.ats_collector: [ATS] Failed for Woolworths Group: Failed to perform, curl: (28) Connection timed out after 15001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:50:09,247 [INFO] collectors.ats_collector: [ATS] Scanning: Aussie Broadband → https://www.aussiebroadband.com.au/careers/
+2026-03-11 04:50:13,337 [WARNING] collectors.ats_collector: [ATS] Failed for Aussie Broadband: HTTP Error 403: 
+2026-03-11 04:50:17,561 [INFO] collectors.ats_collector: [ATS] Scanning: Finder → https://www.finder.com.au/careers
+2026-03-11 04:50:22,967 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:50:23,010 [INFO] collectors.ats_collector: [ATS] Finder: found 3 matching roles
+2026-03-11 04:50:26,014 [INFO] collectors.ats_collector: [ATS] Scanning: Pet Circle → https://www.petcircle.com.au/careers
+2026-03-11 04:50:27,069 [INFO] collectors.ats_collector: [ATS] Pet Circle: found 0 matching roles
+2026-03-11 04:50:30,074 [INFO] collectors.ats_collector: [ATS] Scanning: HiPages → https://hipagesgroup.com.au/careers/
+2026-03-11 04:50:31,001 [INFO] collectors.ats_collector: [ATS] HiPages: found 0 matching roles
+2026-03-11 04:50:34,006 [INFO] collectors.ats_collector: [ATS] Scanning: Up Bank → https://up.com.au/careers/
+2026-03-11 04:50:39,999 [WARNING] collectors.ats_collector: Workable API failed: HTTP Error 404: 
+2026-03-11 04:50:40,009 [INFO] collectors.ats_collector: [ATS] Up Bank: found 2 matching roles
+2026-03-11 04:50:43,011 [INFO] collectors.ats_collector: [ATS] Scanning: PEXA → https://www.pexa.com.au/careers/
+2026-03-11 04:50:55,172 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:50:55,196 [INFO] collectors.ats_collector: [ATS] PEXA: found 0 matching roles
+2026-03-11 04:50:58,202 [INFO] collectors.ats_collector: [ATS] Scanning: Envato → https://envato.com/careers/
+2026-03-11 04:51:06,663 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:51:06,675 [INFO] collectors.ats_collector: [ATS] Envato: found 0 matching roles
+2026-03-11 04:51:09,680 [INFO] collectors.ats_collector: [ATS] Scanning: Judo Bank → https://www.judo.bank/careers
+2026-03-11 04:51:11,203 [INFO] collectors.ats_collector: [ATS] Judo Bank: found 0 matching roles
+2026-03-11 04:51:14,208 [INFO] collectors.ats_collector: [ATS] Scanning: Xplor → https://www.xplortechnologies.com/careers
+2026-03-11 04:51:23,142 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:51:23,156 [INFO] collectors.ats_collector: [ATS] Xplor: found 0 matching roles
+2026-03-11 04:51:26,162 [INFO] collectors.ats_collector: [ATS] Scanning: Bigtincan → https://www.bigtincan.com/careers/
+2026-03-11 04:51:31,221 [WARNING] collectors.ats_collector: [ATS] Failed for Bigtincan: HTTP Error 404: 
+2026-03-11 04:51:35,464 [INFO] collectors.ats_collector: [ATS] Scanning: SiteMinder → https://www.siteminder.com/careers/
+2026-03-11 04:51:42,440 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:51:42,507 [INFO] collectors.ats_collector: [ATS] SiteMinder: found 0 matching roles
+2026-03-11 04:51:45,512 [INFO] collectors.ats_collector: [ATS] Scanning: Domain → https://careers.domain.com.au/
+2026-03-11 04:51:49,567 [WARNING] collectors.ats_collector: [ATS] Failed for Domain: Failed to perform, curl: (6) Could not resolve host: careers.domain.com.au. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:51:53,904 [INFO] collectors.ats_collector: [ATS] Scanning: Macquarie Group → https://www.macquarie.com/au/en/careers.html
+2026-03-11 04:51:54,159 [INFO] collectors.ats_collector: [ATS] Macquarie Group: found 0 matching roles
+2026-03-11 04:51:57,164 [INFO] collectors.ats_collector: [ATS] Scanning: Zip Co → https://zip.co/us/careers
+2026-03-11 04:52:00,254 [INFO] collectors.ats_collector: [ATS] Zip Co: found 0 matching roles
+2026-03-11 04:52:03,261 [INFO] collectors.ats_collector: [ATS] Scanning: Tyro Payments → https://www.tyro.com/careers/
+2026-03-11 04:52:09,119 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:52:09,139 [INFO] collectors.ats_collector: [ATS] Tyro Payments: found 6 matching roles
+2026-03-11 04:52:12,139 [INFO] collectors.ats_collector: [ATS] Scanning: Mr Yum → https://careers.mryum.com/
+2026-03-11 04:52:16,195 [WARNING] collectors.ats_collector: [ATS] Failed for Mr Yum: Failed to perform, curl: (6) Could not resolve host: careers.mryum.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:52:20,443 [INFO] collectors.ats_collector: [ATS] Scanning: Go1 → https://www.go1.com/careers
+2026-03-11 04:52:26,153 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:52:26,177 [INFO] collectors.ats_collector: [ATS] Go1: found 0 matching roles
+2026-03-11 04:52:29,182 [INFO] collectors.ats_collector: [ATS] Scanning: Miro → https://miro.com/careers/
+2026-03-11 04:52:35,352 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:52:35,376 [INFO] collectors.ats_collector: [ATS] Miro: found 1 matching roles
+2026-03-11 04:52:38,381 [INFO] collectors.ats_collector: [ATS] Scanning: Kmart Group Tech → https://www.kmart.com.au/careers/tech/
+2026-03-11 04:52:45,545 [WARNING] collectors.ats_collector: [ATS] Failed for Kmart Group Tech: HTTP Error 404: 
+2026-03-11 04:52:49,787 [INFO] collectors.ats_collector: [ATS] Scanning: Woolworths Group → https://wowcareers.com.au/tech
+2026-03-11 04:53:32,688 [WARNING] collectors.ats_collector: [ATS] Failed for Woolworths Group: Failed to perform, curl: (7) Failed to connect to wowcareers.com.au port 443 after 12563 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 04:53:36,932 [INFO] collectors.ats_collector: [ATS] Scanning: Aussie Broadband → https://www.aussiebroadband.com.au/careers/
+2026-03-11 04:53:41,022 [WARNING] collectors.ats_collector: [ATS] Failed for Aussie Broadband: HTTP Error 403: 
+2026-03-11 04:53:45,217 [INFO] collectors.ats_collector: [ATS] Scanning: Finder → https://www.finder.com.au/careers
+2026-03-11 04:53:51,134 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:53:51,172 [INFO] collectors.ats_collector: [ATS] Finder: found 3 matching roles
+2026-03-11 04:53:54,176 [INFO] collectors.ats_collector: [ATS] Scanning: Pet Circle → https://www.petcircle.com.au/careers
+2026-03-11 04:53:56,294 [INFO] collectors.ats_collector: [ATS] Pet Circle: found 0 matching roles
+2026-03-11 04:53:59,299 [INFO] collectors.ats_collector: [ATS] Scanning: HiPages → https://hipagesgroup.com.au/careers/
+2026-03-11 04:54:00,225 [INFO] collectors.ats_collector: [ATS] HiPages: found 0 matching roles
+2026-03-11 04:54:03,228 [INFO] collectors.ats_collector: [ATS] Scanning: Up Bank → https://up.com.au/careers/
+2026-03-11 04:54:08,549 [WARNING] collectors.ats_collector: Workable API failed: HTTP Error 404: 
+2026-03-11 04:54:08,558 [INFO] collectors.ats_collector: [ATS] Up Bank: found 2 matching roles
+2026-03-11 04:54:11,563 [INFO] collectors.ats_collector: [ATS] Scanning: PEXA → https://www.pexa.com.au/careers/
+2026-03-11 04:54:17,808 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:54:17,832 [INFO] collectors.ats_collector: [ATS] PEXA: found 0 matching roles
+2026-03-11 04:54:20,837 [INFO] collectors.ats_collector: [ATS] Scanning: Envato → https://envato.com/careers/
+2026-03-11 04:54:28,451 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:54:28,464 [INFO] collectors.ats_collector: [ATS] Envato: found 0 matching roles
+2026-03-11 04:54:31,469 [INFO] collectors.ats_collector: [ATS] Scanning: Judo Bank → https://www.judo.bank/careers
+2026-03-11 04:54:32,158 [INFO] collectors.ats_collector: [ATS] Judo Bank: found 0 matching roles
+2026-03-11 04:54:35,161 [INFO] collectors.ats_collector: [ATS] Scanning: Xplor → https://www.xplortechnologies.com/careers
+2026-03-11 04:54:40,416 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:54:40,441 [INFO] collectors.ats_collector: [ATS] Xplor: found 0 matching roles
+2026-03-11 04:54:43,445 [INFO] collectors.ats_collector: [ATS] Scanning: Bigtincan → https://www.bigtincan.com/careers/
+2026-03-11 04:54:48,061 [WARNING] collectors.ats_collector: [ATS] Failed for Bigtincan: HTTP Error 404: 
+2026-03-11 04:54:52,468 [INFO] collectors.ats_collector: [ATS] Scanning: SiteMinder → https://www.siteminder.com/careers/
+2026-03-11 04:54:59,422 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:54:59,458 [INFO] collectors.ats_collector: [ATS] SiteMinder: found 0 matching roles
+2026-03-11 04:55:02,460 [INFO] collectors.ats_collector: [ATS] Scanning: GitLab → https://about.gitlab.com/jobs/
+2026-03-11 04:55:10,042 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:55:10,080 [INFO] collectors.ats_collector: [ATS] GitLab: found 0 matching roles
+2026-03-11 04:55:13,083 [INFO] collectors.ats_collector: [ATS] Scanning: Stripe → https://stripe.com/jobs
+2026-03-11 04:55:19,795 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:55:19,857 [INFO] collectors.ats_collector: [ATS] Stripe: found 32 matching roles
+2026-03-11 04:55:22,860 [INFO] collectors.ats_collector: [ATS] Scanning: Automattic → https://automattic.com/work-with-us/
+2026-03-11 04:55:28,160 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:55:28,179 [INFO] collectors.ats_collector: [ATS] Automattic: found 0 matching roles
+2026-03-11 04:55:31,182 [INFO] collectors.ats_collector: [ATS] Scanning: Tailor → https://www.tailor.tech/careers
+2026-03-11 04:55:36,068 [WARNING] collectors.ats_collector: [ATS] Failed for Tailor: HTTP Error 404: 
+2026-03-11 04:55:40,439 [INFO] collectors.ats_collector: [ATS] Scanning: ProcurePro → https://procurepro.co/careers/
+2026-03-11 04:55:41,371 [INFO] collectors.ats_collector: [ATS] ProcurePro: found 19 matching roles
+2026-03-11 04:55:44,376 [INFO] collectors.ats_collector: [ATS] Scanning: upcover → https://www.upcover.com/careers
+2026-03-11 04:55:48,889 [WARNING] collectors.ats_collector: [ATS] Failed for upcover: HTTP Error 404: 
+2026-03-11 04:55:53,212 [INFO] collectors.ats_collector: [ATS] Scanning: Who Gives A Crap → https://au.whogivesacrap.org/pages/jobs
+2026-03-11 04:55:58,409 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 04:55:58,437 [INFO] collectors.ats_collector: [ATS] Who Gives A Crap: found 2 matching roles
+2026-03-11 04:56:01,438 [INFO] collectors.ats_collector: [ATS] Scanning: Deputy → https://www.deputy.com/company/careers
+2026-03-11 04:56:01,966 [INFO] collectors.ats_collector: [ATS] Deputy: found 0 matching roles
+2026-03-11 04:56:05,333 [INFO] pipeline: ✅ Wrote signal [4/10] Co-Founder & Head of Product @ ProcurePro (ats)
+2026-03-11 04:56:05,333 [INFO] scheduler: ✅ ATSCollector: 77 signals → 1 new written
+2026-03-11 04:56:05,338 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-11 04:56:33,297 [INFO] scheduler: ✅ RedditCollector: 1 signals → 0 new written
+2026-03-11 04:56:33,301 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-11 04:56:35,316 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-11 04:56:41,272 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-11 04:56:47,349 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-11 04:56:53,330 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-11 04:56:59,323 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-11 04:57:01,851 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager AI-Native - Early Career @ Bamboo App (seek)
+2026-03-11 04:57:02,466 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 04:57:02,467 [INFO] alerter: Slack alert sent for Bamboo App — Product Manager AI-Native - Early Career
+2026-03-11 04:57:04,464 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager - Identity @ Octopus Deploy (seek)
+2026-03-11 04:57:05,036 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 04:57:05,037 [INFO] alerter: Slack alert sent for Octopus Deploy — Senior Product Manager - Identity
+2026-03-11 04:57:06,274 [INFO] scheduler: ✅ SeekCollector: 110 signals → 2 new written
+2026-03-11 04:57:06,277 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-11 04:57:07,473 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+manager&l=Australia&sort=date
+2026-03-11 04:57:38,903 [WARNING] collectors.indeed_collector: [Indeed] 'product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 04:57:43,908 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=senior+product+manager&l=Australia&sort=date
+2026-03-11 04:58:08,877 [WARNING] collectors.indeed_collector: [Indeed] 'senior product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 04:58:13,882 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=head+of+product&l=Australia&sort=date
+2026-03-11 04:58:38,763 [WARNING] collectors.indeed_collector: [Indeed] 'head of product': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 04:58:43,765 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+lead&l=Australia&sort=date
+2026-03-11 04:59:08,746 [WARNING] collectors.indeed_collector: [Indeed] 'product lead': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 04:59:13,748 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=group+product+manager&l=Australia&sort=date
+2026-03-11 04:59:40,586 [WARNING] collectors.indeed_collector: [Indeed] 'group product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 04:59:42,282 [INFO] scheduler: ✅ IndeedCollector: 0 signals → 0 new written
+2026-03-11 04:59:42,282 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-11 04:59:44,124 [INFO] collectors.jora_collector: [Jora] 'product manager': 9 listings
+2026-03-11 04:59:49,550 [INFO] collectors.jora_collector: [Jora] 'head of product': 12 listings
+2026-03-11 04:59:58,231 [INFO] collectors.jora_collector: [Jora] 'product lead': 13 listings
+2026-03-11 04:59:59,858 [INFO] scheduler: ✅ JoraCollector: 34 signals → 0 new written
+2026-03-11 04:59:59,861 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-11 05:00:10,014 [WARNING] collectors.wellfound_collector: [Wellfound] Wellfound blocked with 403 for product-manager/remote. Cloudflare protection active. Skipping — no retry.
+2026-03-11 05:00:15,464 [WARNING] collectors.wellfound_collector: [Wellfound] Wellfound blocked with 403 for head-of-product/australia. Cloudflare protection active. Skipping — no retry.
+2026-03-11 05:00:18,291 [INFO] scheduler: ✅ WellfoundCollector: 0 signals → 0 new written
+2026-03-11 05:00:18,291 [INFO] scheduler: ▶ Starting RecruiterCollector...
+2026-03-11 05:00:26,259 [ERROR] collectors.recruiter_collector: [Recruiters] Failed to scrape S2M: [Errno 61] Connection refused
+2026-03-11 05:00:28,636 [INFO] pipeline: ✅ Wrote signal [7/10] Lead Product Manager, Everyday Banking @ Parity Consulting (Agency) (parity_consulting)
+2026-03-11 05:00:29,032 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:00:29,033 [INFO] alerter: Slack alert sent for Parity Consulting (Agency) — Lead Product Manager, Everyday Banking
+2026-03-11 05:00:30,233 [INFO] scheduler: ✅ RecruiterCollector: 3 signals → 1 new written
+2026-03-11 05:00:30,233 [INFO] __main__: Single pass complete. Check hiring_signals tab in Google Sheets.
+2026-03-11 05:26:48,098 [INFO] __main__: Connecting to Google Sheets...
+2026-03-11 05:26:50,730 [INFO] sheets.client: All tabs verified.
+2026-03-11 05:26:50,730 [INFO] __main__: Slack alerts: enabled
+2026-03-11 05:26:50,730 [INFO] __main__: Running all collectors (single pass)...
+2026-03-11 05:26:50,897 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-11 05:26:53,442 [INFO] collectors.ats_collector: [ATS] Scanning: Domain → https://careers.domain.com.au/
+2026-03-11 05:26:57,540 [WARNING] collectors.ats_collector: [ATS] Failed for Domain: Failed to perform, curl: (6) Could not resolve host: careers.domain.com.au. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:27:02,260 [INFO] collectors.ats_collector: [ATS] Scanning: Macquarie Group → https://www.macquarie.com/au/en/careers.html
+2026-03-11 05:27:02,524 [INFO] collectors.ats_collector: [ATS] Macquarie Group: found 0 matching roles
+2026-03-11 05:27:05,526 [INFO] collectors.ats_collector: [ATS] Scanning: Zip Co → https://zip.co/us/careers
+2026-03-11 05:27:08,587 [INFO] collectors.ats_collector: [ATS] Zip Co: found 0 matching roles
+2026-03-11 05:27:11,591 [INFO] collectors.ats_collector: [ATS] Scanning: Tyro Payments → https://www.tyro.com/careers/
+2026-03-11 05:27:18,687 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:27:18,707 [INFO] collectors.ats_collector: [ATS] Tyro Payments: found 6 matching roles
+2026-03-11 05:27:21,709 [INFO] collectors.ats_collector: [ATS] Scanning: Mr Yum → https://careers.mryum.com/
+2026-03-11 05:27:25,756 [WARNING] collectors.ats_collector: [ATS] Failed for Mr Yum: Failed to perform, curl: (6) Could not resolve host: careers.mryum.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:27:30,439 [INFO] collectors.ats_collector: [ATS] Scanning: Go1 → https://www.go1.com/careers
+2026-03-11 05:27:37,116 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:27:37,140 [INFO] collectors.ats_collector: [ATS] Go1: found 0 matching roles
+2026-03-11 05:27:40,145 [INFO] collectors.ats_collector: [ATS] Scanning: Miro → https://miro.com/careers/
+2026-03-11 05:27:46,367 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:27:46,399 [INFO] collectors.ats_collector: [ATS] Miro: found 1 matching roles
+2026-03-11 05:27:49,400 [INFO] collectors.ats_collector: [ATS] Scanning: Kmart Group Tech → https://www.kmart.com.au/careers/tech/
+2026-03-11 05:27:56,915 [WARNING] collectors.ats_collector: [ATS] Failed for Kmart Group Tech: HTTP Error 404: 
+2026-03-11 05:28:01,424 [INFO] collectors.ats_collector: [ATS] Scanning: Woolworths Group → https://wowcareers.com.au/tech
+2026-03-11 05:28:46,435 [WARNING] collectors.ats_collector: [ATS] Failed for Woolworths Group: Failed to perform, curl: (7) Failed to connect to wowcareers.com.au port 443 after 13653 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:28:50,632 [INFO] collectors.ats_collector: [ATS] Scanning: Aussie Broadband → https://www.aussiebroadband.com.au/careers/
+2026-03-11 05:28:54,758 [WARNING] collectors.ats_collector: [ATS] Failed for Aussie Broadband: HTTP Error 403: 
+2026-03-11 05:28:59,064 [INFO] collectors.ats_collector: [ATS] Scanning: Finder → https://www.finder.com.au/careers
+2026-03-11 05:29:19,256 [WARNING] collectors.ats_collector: Greenhouse API failed: Failed to perform, curl: (28) Operation timed out after 15002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:29:19,297 [INFO] collectors.ats_collector: [ATS] Finder: found 3 matching roles
+2026-03-11 05:29:22,302 [INFO] collectors.ats_collector: [ATS] Scanning: Pet Circle → https://www.petcircle.com.au/careers
+2026-03-11 05:29:23,476 [INFO] collectors.ats_collector: [ATS] Pet Circle: found 0 matching roles
+2026-03-11 05:29:26,480 [INFO] collectors.ats_collector: [ATS] Scanning: HiPages → https://hipagesgroup.com.au/careers/
+2026-03-11 05:29:27,634 [INFO] collectors.ats_collector: [ATS] HiPages: found 0 matching roles
+2026-03-11 05:29:30,639 [INFO] collectors.ats_collector: [ATS] Scanning: Up Bank → https://up.com.au/careers/
+2026-03-11 05:29:36,018 [WARNING] collectors.ats_collector: Workable API failed: HTTP Error 404: 
+2026-03-11 05:29:36,028 [INFO] collectors.ats_collector: [ATS] Up Bank: found 2 matching roles
+2026-03-11 05:29:39,031 [INFO] collectors.ats_collector: [ATS] Scanning: PEXA → https://www.pexa.com.au/careers/
+2026-03-11 05:29:46,191 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:29:46,213 [INFO] collectors.ats_collector: [ATS] PEXA: found 0 matching roles
+2026-03-11 05:29:49,218 [INFO] collectors.ats_collector: [ATS] Scanning: Envato → https://envato.com/careers/
+2026-03-11 05:29:57,045 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:29:57,059 [INFO] collectors.ats_collector: [ATS] Envato: found 0 matching roles
+2026-03-11 05:30:00,065 [INFO] collectors.ats_collector: [ATS] Scanning: Judo Bank → https://www.judo.bank/careers
+2026-03-11 05:30:02,353 [INFO] collectors.ats_collector: [ATS] Judo Bank: found 0 matching roles
+2026-03-11 05:30:05,358 [INFO] collectors.ats_collector: [ATS] Scanning: Xplor → https://www.xplortechnologies.com/careers
+2026-03-11 05:30:11,902 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:30:11,933 [INFO] collectors.ats_collector: [ATS] Xplor: found 0 matching roles
+2026-03-11 05:30:14,936 [INFO] collectors.ats_collector: [ATS] Scanning: Bigtincan → https://www.bigtincan.com/careers/
+2026-03-11 05:30:19,762 [WARNING] collectors.ats_collector: [ATS] Failed for Bigtincan: HTTP Error 404: 
+2026-03-11 05:30:23,997 [INFO] collectors.ats_collector: [ATS] Scanning: SiteMinder → https://www.siteminder.com/careers/
+2026-03-11 05:30:28,950 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:30:29,019 [INFO] collectors.ats_collector: [ATS] SiteMinder: found 0 matching roles
+2026-03-11 05:30:32,024 [INFO] collectors.ats_collector: [ATS] Scanning: Domain → https://careers.domain.com.au/
+2026-03-11 05:30:36,067 [WARNING] collectors.ats_collector: [ATS] Failed for Domain: Failed to perform, curl: (6) Could not resolve host: careers.domain.com.au. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:30:40,429 [INFO] collectors.ats_collector: [ATS] Scanning: Macquarie Group → https://www.macquarie.com/au/en/careers.html
+2026-03-11 05:30:40,702 [INFO] collectors.ats_collector: [ATS] Macquarie Group: found 0 matching roles
+2026-03-11 05:30:43,708 [INFO] collectors.ats_collector: [ATS] Scanning: Zip Co → https://zip.co/us/careers
+2026-03-11 05:30:46,261 [INFO] collectors.ats_collector: [ATS] Zip Co: found 0 matching roles
+2026-03-11 05:30:49,267 [INFO] collectors.ats_collector: [ATS] Scanning: Tyro Payments → https://www.tyro.com/careers/
+2026-03-11 05:30:55,072 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:30:55,093 [INFO] collectors.ats_collector: [ATS] Tyro Payments: found 6 matching roles
+2026-03-11 05:30:58,100 [INFO] collectors.ats_collector: [ATS] Scanning: Mr Yum → https://careers.mryum.com/
+2026-03-11 05:31:02,152 [WARNING] collectors.ats_collector: [ATS] Failed for Mr Yum: Failed to perform, curl: (6) Could not resolve host: careers.mryum.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:31:06,645 [INFO] collectors.ats_collector: [ATS] Scanning: Go1 → https://www.go1.com/careers
+2026-03-11 05:31:12,425 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:31:12,446 [INFO] collectors.ats_collector: [ATS] Go1: found 0 matching roles
+2026-03-11 05:31:15,448 [INFO] collectors.ats_collector: [ATS] Scanning: Miro → https://miro.com/careers/
+2026-03-11 05:31:21,744 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:31:21,772 [INFO] collectors.ats_collector: [ATS] Miro: found 1 matching roles
+2026-03-11 05:31:24,778 [INFO] collectors.ats_collector: [ATS] Scanning: Kmart Group Tech → https://www.kmart.com.au/careers/tech/
+2026-03-11 05:31:32,311 [WARNING] collectors.ats_collector: [ATS] Failed for Kmart Group Tech: HTTP Error 404: 
+2026-03-11 05:31:36,814 [INFO] collectors.ats_collector: [ATS] Scanning: Woolworths Group → https://wowcareers.com.au/tech
+2026-03-11 05:32:25,837 [WARNING] collectors.ats_collector: [ATS] Failed for Woolworths Group: Failed to perform, curl: (28) Connection timed out after 15001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:32:30,263 [INFO] collectors.ats_collector: [ATS] Scanning: Aussie Broadband → https://www.aussiebroadband.com.au/careers/
+2026-03-11 05:32:34,349 [WARNING] collectors.ats_collector: [ATS] Failed for Aussie Broadband: HTTP Error 403: 
+2026-03-11 05:32:38,649 [INFO] collectors.ats_collector: [ATS] Scanning: Finder → https://www.finder.com.au/careers
+2026-03-11 05:32:44,603 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:32:44,644 [INFO] collectors.ats_collector: [ATS] Finder: found 3 matching roles
+2026-03-11 05:32:47,648 [INFO] collectors.ats_collector: [ATS] Scanning: Pet Circle → https://www.petcircle.com.au/careers
+2026-03-11 05:32:48,689 [INFO] collectors.ats_collector: [ATS] Pet Circle: found 0 matching roles
+2026-03-11 05:32:51,694 [INFO] collectors.ats_collector: [ATS] Scanning: HiPages → https://hipagesgroup.com.au/careers/
+2026-03-11 05:32:52,619 [INFO] collectors.ats_collector: [ATS] HiPages: found 0 matching roles
+2026-03-11 05:32:55,625 [INFO] collectors.ats_collector: [ATS] Scanning: Up Bank → https://up.com.au/careers/
+2026-03-11 05:33:00,976 [WARNING] collectors.ats_collector: Workable API failed: HTTP Error 404: 
+2026-03-11 05:33:00,986 [INFO] collectors.ats_collector: [ATS] Up Bank: found 2 matching roles
+2026-03-11 05:33:03,991 [INFO] collectors.ats_collector: [ATS] Scanning: PEXA → https://www.pexa.com.au/careers/
+2026-03-11 05:33:15,827 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:33:15,850 [INFO] collectors.ats_collector: [ATS] PEXA: found 0 matching roles
+2026-03-11 05:33:18,856 [INFO] collectors.ats_collector: [ATS] Scanning: Envato → https://envato.com/careers/
+2026-03-11 05:33:30,869 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:33:30,880 [INFO] collectors.ats_collector: [ATS] Envato: found 0 matching roles
+2026-03-11 05:33:33,885 [INFO] collectors.ats_collector: [ATS] Scanning: Judo Bank → https://www.judo.bank/careers
+2026-03-11 05:33:34,370 [INFO] collectors.ats_collector: [ATS] Judo Bank: found 0 matching roles
+2026-03-11 05:33:37,376 [INFO] collectors.ats_collector: [ATS] Scanning: Xplor → https://www.xplortechnologies.com/careers
+2026-03-11 05:33:42,642 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:33:42,669 [INFO] collectors.ats_collector: [ATS] Xplor: found 0 matching roles
+2026-03-11 05:33:45,674 [INFO] collectors.ats_collector: [ATS] Scanning: Bigtincan → https://www.bigtincan.com/careers/
+2026-03-11 05:33:50,366 [WARNING] collectors.ats_collector: [ATS] Failed for Bigtincan: HTTP Error 404: 
+2026-03-11 05:33:54,618 [INFO] collectors.ats_collector: [ATS] Scanning: SiteMinder → https://www.siteminder.com/careers/
+2026-03-11 05:33:59,552 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:33:59,597 [INFO] collectors.ats_collector: [ATS] SiteMinder: found 0 matching roles
+2026-03-11 05:34:02,597 [INFO] collectors.ats_collector: [ATS] Scanning: GitLab → https://about.gitlab.com/jobs/
+2026-03-11 05:34:08,941 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:34:08,980 [INFO] collectors.ats_collector: [ATS] GitLab: found 0 matching roles
+2026-03-11 05:34:11,980 [INFO] collectors.ats_collector: [ATS] Scanning: Stripe → https://stripe.com/jobs
+2026-03-11 05:34:22,657 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:34:22,718 [INFO] collectors.ats_collector: [ATS] Stripe: found 32 matching roles
+2026-03-11 05:34:25,722 [INFO] collectors.ats_collector: [ATS] Scanning: Automattic → https://automattic.com/work-with-us/
+2026-03-11 05:34:31,552 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:34:31,613 [INFO] collectors.ats_collector: [ATS] Automattic: found 0 matching roles
+2026-03-11 05:34:34,618 [INFO] collectors.ats_collector: [ATS] Scanning: Tailor → https://www.tailor.tech/careers
+2026-03-11 05:34:39,923 [WARNING] collectors.ats_collector: [ATS] Failed for Tailor: HTTP Error 404: 
+2026-03-11 05:34:44,132 [INFO] collectors.ats_collector: [ATS] Scanning: ProcurePro → https://procurepro.co/careers/
+2026-03-11 05:34:44,990 [INFO] collectors.ats_collector: [ATS] ProcurePro: found 19 matching roles
+2026-03-11 05:34:47,992 [INFO] collectors.ats_collector: [ATS] Scanning: upcover → https://www.upcover.com/careers
+2026-03-11 05:34:52,179 [WARNING] collectors.ats_collector: [ATS] Failed for upcover: HTTP Error 404: 
+2026-03-11 05:34:56,403 [INFO] collectors.ats_collector: [ATS] Scanning: Who Gives A Crap → https://au.whogivesacrap.org/pages/jobs
+2026-03-11 05:35:11,363 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:35:11,390 [INFO] collectors.ats_collector: [ATS] Who Gives A Crap: found 2 matching roles
+2026-03-11 05:35:14,395 [INFO] collectors.ats_collector: [ATS] Scanning: Deputy → https://www.deputy.com/company/careers
+2026-03-11 05:35:14,848 [INFO] collectors.ats_collector: [ATS] Deputy: found 0 matching roles
+2026-03-11 05:35:17,329 [INFO] scheduler: ✅ ATSCollector: 77 signals → 0 new written
+2026-03-11 05:35:17,333 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-11 05:35:46,943 [INFO] scheduler: ✅ RedditCollector: 1 signals → 0 new written
+2026-03-11 05:35:46,946 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-11 05:35:49,066 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-11 05:35:54,882 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-11 05:36:00,781 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-11 05:36:06,754 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-11 05:36:12,577 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-11 05:36:14,990 [INFO] pipeline: ✅ Wrote signal [5/10] Lead Product Manager @ Department of Education (seek)
+2026-03-11 05:36:15,774 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager - Industrial Consumer Durables @ Salexo Consulting (seek)
+2026-03-11 05:36:16,666 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ Medtronic (seek)
+2026-03-11 05:36:16,943 [INFO] __main__: Connecting to Google Sheets...
+2026-03-11 05:36:17,073 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:36:17,074 [INFO] alerter: Slack alert sent for Medtronic — Senior Product Manager
+2026-03-11 05:36:19,151 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ Alinta Energy (seek)
+2026-03-11 05:36:19,413 [INFO] sheets.client: All tabs verified.
+2026-03-11 05:36:19,413 [INFO] __main__: Slack alerts: enabled
+2026-03-11 05:36:19,413 [INFO] __main__: Running all collectors (single pass)...
+2026-03-11 05:36:19,543 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:36:19,543 [INFO] alerter: Slack alert sent for Alinta Energy — Senior Product Manager
+2026-03-11 05:36:19,570 [INFO] scheduler: ▶ Starting ATSCollector...
+2026-03-11 05:36:21,594 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ TABCORP (seek)
+2026-03-11 05:36:22,014 [INFO] collectors.ats_collector: [ATS] Scanning: Domain → https://careers.domain.com.au/
+2026-03-11 05:36:22,165 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:36:22,169 [INFO] alerter: Slack alert sent for TABCORP — Product Manager
+2026-03-11 05:36:23,440 [INFO] scheduler: ✅ SeekCollector: 110 signals → 5 new written
+2026-03-11 05:36:23,443 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-11 05:36:24,639 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+manager&l=Australia&sort=date
+2026-03-11 05:36:25,531 [INFO] collectors.indeed_collector: [Indeed] 'product manager': 15 listings successfully fetched
+2026-03-11 05:36:26,069 [WARNING] collectors.ats_collector: [ATS] Failed for Domain: Failed to perform, curl: (6) Could not resolve host: careers.domain.com.au. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:36:30,519 [INFO] collectors.ats_collector: [ATS] Scanning: Macquarie Group → https://www.macquarie.com/au/en/careers.html
+2026-03-11 05:36:30,533 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=senior+product+manager&l=Australia&sort=date
+2026-03-11 05:36:30,783 [INFO] collectors.ats_collector: [ATS] Macquarie Group: found 0 matching roles
+2026-03-11 05:36:31,490 [WARNING] collectors.indeed_collector: [Indeed] 'senior product manager': 0 results -- Indeed may be blocking. Try again later or reduce cadence.
+2026-03-11 05:36:33,788 [INFO] collectors.ats_collector: [ATS] Scanning: Zip Co → https://zip.co/us/careers
+2026-03-11 05:36:36,495 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=head+of+product&l=Australia&sort=date
+2026-03-11 05:36:37,591 [INFO] collectors.indeed_collector: [Indeed] 'head of product': 15 listings successfully fetched
+2026-03-11 05:36:37,820 [INFO] collectors.ats_collector: [ATS] Zip Co: found 0 matching roles
+2026-03-11 05:36:40,825 [INFO] collectors.ats_collector: [ATS] Scanning: Tyro Payments → https://www.tyro.com/careers/
+2026-03-11 05:36:42,596 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+lead&l=Australia&sort=date
+2026-03-11 05:36:43,472 [INFO] collectors.indeed_collector: [Indeed] 'product lead': 15 listings successfully fetched
+2026-03-11 05:36:47,336 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:36:47,357 [INFO] collectors.ats_collector: [ATS] Tyro Payments: found 6 matching roles
+2026-03-11 05:36:48,473 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=group+product+manager&l=Australia&sort=date
+2026-03-11 05:36:49,186 [INFO] collectors.indeed_collector: [Indeed] 'group product manager': 15 listings successfully fetched
+2026-03-11 05:36:50,359 [INFO] collectors.ats_collector: [ATS] Scanning: Mr Yum → https://careers.mryum.com/
+2026-03-11 05:36:51,573 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Commonwealth Bank (indeed)
+2026-03-11 05:36:52,195 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:36:52,196 [INFO] alerter: Slack alert sent for Commonwealth Bank — Product Manager
+2026-03-11 05:36:54,222 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Commonwealth Bank (indeed)
+2026-03-11 05:36:54,403 [WARNING] collectors.ats_collector: [ATS] Failed for Mr Yum: Failed to perform, curl: (6) Could not resolve host: careers.mryum.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:36:54,777 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:36:54,781 [INFO] alerter: Slack alert sent for Commonwealth Bank — Product Manager
+2026-03-11 05:36:56,816 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product, Scale & Enablement @ Prezzee (indeed)
+2026-03-11 05:36:57,369 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:36:57,370 [INFO] alerter: Slack alert sent for Prezzee — Head of Product, Scale & Enablement
+2026-03-11 05:36:58,826 [INFO] collectors.ats_collector: [ATS] Scanning: Go1 → https://www.go1.com/careers
+2026-03-11 05:36:59,397 [INFO] pipeline: ✅ Wrote signal [7/10] Group Product Manager - International Payments @ Freelancer.com (indeed)
+2026-03-11 05:36:59,774 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:36:59,775 [INFO] alerter: Slack alert sent for Freelancer.com — Group Product Manager - International Payments
+2026-03-11 05:37:01,802 [INFO] pipeline: ✅ Wrote signal [7/10] Head of Product - Datascape @ Datacom (indeed)
+2026-03-11 05:37:02,177 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:37:02,177 [INFO] alerter: Slack alert sent for Datacom — Head of Product - Datascape
+2026-03-11 05:37:04,226 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager (Legal Experience) @ Thomson Reuters (indeed)
+2026-03-11 05:37:04,514 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:37:04,536 [INFO] collectors.ats_collector: [ATS] Go1: found 0 matching roles
+2026-03-11 05:37:04,618 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:37:04,619 [INFO] alerter: Slack alert sent for Thomson Reuters — Product Manager (Legal Experience)
+2026-03-11 05:37:06,653 [INFO] pipeline: ✅ Wrote signal [5/10] Data & Integrations Product Manager @ Breadcrumb (indeed)
+2026-03-11 05:37:07,443 [INFO] pipeline: ✅ Wrote signal [5/10] SCHN - Modern Workspace Product Manager @ NSW Health (indeed)
+2026-03-11 05:37:07,539 [INFO] collectors.ats_collector: [ATS] Scanning: Miro → https://miro.com/careers/
+2026-03-11 05:37:08,235 [INFO] pipeline: ✅ Wrote signal [5/10] SCHN - Modern Workspace Product Manager @ NSW Health (indeed)
+2026-03-11 05:37:09,016 [INFO] pipeline: ✅ Wrote signal [5/10] Brand & Product Lead @ PT. Busana Inovasi Global (indeed)
+2026-03-11 05:37:09,798 [INFO] pipeline: ✅ Wrote signal [5/10] Senior Product Manager- Institutional @ oneZero Financial Systems (indeed)
+2026-03-11 05:37:10,576 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager - Fixed Term Contract @ Volkswagen Financial Services Australia (indeed)
+2026-03-11 05:37:11,394 [INFO] pipeline: ✅ Wrote signal [5/10] Product Manager, Continence Management @ HARTMANN (indeed)
+2026-03-11 05:37:12,214 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager - Consumer Spending @ Commonwealth Bank (indeed)
+2026-03-11 05:37:12,765 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:37:12,766 [INFO] alerter: Slack alert sent for Commonwealth Bank — Senior Product Manager - Consumer Spending
+2026-03-11 05:37:13,635 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:37:13,656 [INFO] collectors.ats_collector: [ATS] Miro: found 1 matching roles
+2026-03-11 05:37:14,819 [INFO] pipeline: ✅ Wrote signal [7/10] Regional Product Manager @ Granicus Australia / New Zealand (indeed)
+2026-03-11 05:37:15,188 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:37:15,189 [INFO] alerter: Slack alert sent for Granicus Australia / New Zealand — Regional Product Manager
+2026-03-11 05:37:16,662 [INFO] collectors.ats_collector: [ATS] Scanning: Kmart Group Tech → https://www.kmart.com.au/careers/tech/
+2026-03-11 05:37:17,229 [INFO] pipeline: ✅ Wrote signal [5/10] Senior Product Manager, Access and Strategic Initiatives @ Optus (indeed)
+2026-03-11 05:37:18,024 [INFO] pipeline: ✅ Wrote signal [7/10] Digital Product Manager - Everyday Banking @ Commonwealth Bank (indeed)
+2026-03-11 05:37:18,585 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:37:18,586 [INFO] alerter: Slack alert sent for Commonwealth Bank — Digital Product Manager - Everyday Banking
+2026-03-11 05:37:20,634 [INFO] pipeline: ✅ Wrote signal [7/10] Senior Product Manager @ Commonwealth Bank (indeed)
+2026-03-11 05:37:21,198 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:37:21,199 [INFO] alerter: Slack alert sent for Commonwealth Bank — Senior Product Manager
+2026-03-11 05:37:23,206 [INFO] pipeline: ✅ Wrote signal [7/10] DI Finance Product Manager @ Suncorp Group (indeed)
+2026-03-11 05:37:23,767 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:37:23,768 [INFO] alerter: Slack alert sent for Suncorp Group — DI Finance Product Manager
+2026-03-11 05:37:23,774 [WARNING] collectors.ats_collector: [ATS] Failed for Kmart Group Tech: HTTP Error 404: 
+2026-03-11 05:37:25,950 [INFO] pipeline: ✅ Wrote signal [5/10] Product Lead - Learning @ Woolworths Group (indeed)
+2026-03-11 05:37:26,903 [INFO] pipeline: ✅ Wrote signal [7/10] Group Product Manager - International Payments @ Freelancer.com (indeed)
+2026-03-11 05:37:27,455 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:37:27,456 [INFO] alerter: Slack alert sent for Freelancer.com — Group Product Manager - International Payments
+2026-03-11 05:37:28,142 [INFO] collectors.ats_collector: [ATS] Scanning: Woolworths Group → https://wowcareers.com.au/tech
+2026-03-11 05:37:28,704 [INFO] scheduler: ✅ IndeedCollector: 60 signals → 21 new written
+2026-03-11 05:37:28,704 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-11 05:37:31,961 [INFO] collectors.jora_collector: [Jora] 'product manager': 12 listings
+2026-03-11 05:37:37,420 [INFO] collectors.jora_collector: [Jora] 'head of product': 21 listings
+2026-03-11 05:37:42,897 [INFO] collectors.jora_collector: [Jora] 'product lead': 12 listings
+2026-03-11 05:37:44,509 [INFO] scheduler: ✅ JoraCollector: 45 signals → 0 new written
+2026-03-11 05:37:44,512 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-11 05:37:52,161 [WARNING] collectors.wellfound_collector: [Wellfound] Wellfound blocked with 403 for product-manager/remote. Cloudflare protection active. Skipping — no retry.
+2026-03-11 05:37:57,575 [WARNING] collectors.wellfound_collector: [Wellfound] Wellfound blocked with 403 for head-of-product/australia. Cloudflare protection active. Skipping — no retry.
+2026-03-11 05:38:00,303 [INFO] scheduler: ✅ WellfoundCollector: 0 signals → 0 new written
+2026-03-11 05:38:00,304 [INFO] scheduler: ▶ Starting RecruiterCollector...
+2026-03-11 05:38:07,958 [ERROR] collectors.recruiter_collector: [Recruiters] Failed to scrape S2M: [Errno 61] Connection refused
+2026-03-11 05:38:09,502 [INFO] scheduler: ✅ RecruiterCollector: 3 signals → 0 new written
+2026-03-11 05:38:09,502 [INFO] __main__: Single pass complete. Check hiring_signals tab in Google Sheets.
+2026-03-11 05:38:12,323 [WARNING] collectors.ats_collector: [ATS] Failed for Woolworths Group: Failed to perform, curl: (7) Failed to connect to wowcareers.com.au port 443 after 14654 ms: Could not connect to server. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:38:16,707 [INFO] collectors.ats_collector: [ATS] Scanning: Aussie Broadband → https://www.aussiebroadband.com.au/careers/
+2026-03-11 05:38:20,802 [WARNING] collectors.ats_collector: [ATS] Failed for Aussie Broadband: HTTP Error 403: 
+2026-03-11 05:38:24,975 [INFO] collectors.ats_collector: [ATS] Scanning: Finder → https://www.finder.com.au/careers
+2026-03-11 05:38:31,407 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:38:31,448 [INFO] collectors.ats_collector: [ATS] Finder: found 3 matching roles
+2026-03-11 05:38:34,453 [INFO] collectors.ats_collector: [ATS] Scanning: Pet Circle → https://www.petcircle.com.au/careers
+2026-03-11 05:38:35,515 [INFO] collectors.ats_collector: [ATS] Pet Circle: found 0 matching roles
+2026-03-11 05:38:38,518 [INFO] collectors.ats_collector: [ATS] Scanning: HiPages → https://hipagesgroup.com.au/careers/
+2026-03-11 05:38:39,442 [INFO] collectors.ats_collector: [ATS] HiPages: found 0 matching roles
+2026-03-11 05:38:42,447 [INFO] collectors.ats_collector: [ATS] Scanning: Up Bank → https://up.com.au/careers/
+2026-03-11 05:38:47,806 [WARNING] collectors.ats_collector: Workable API failed: HTTP Error 404: 
+2026-03-11 05:38:47,813 [INFO] collectors.ats_collector: [ATS] Up Bank: found 2 matching roles
+2026-03-11 05:38:50,814 [INFO] collectors.ats_collector: [ATS] Scanning: PEXA → https://www.pexa.com.au/careers/
+2026-03-11 05:38:58,722 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:38:58,744 [INFO] collectors.ats_collector: [ATS] PEXA: found 0 matching roles
+2026-03-11 05:39:01,745 [INFO] collectors.ats_collector: [ATS] Scanning: Envato → https://envato.com/careers/
+2026-03-11 05:39:12,743 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:39:12,756 [INFO] collectors.ats_collector: [ATS] Envato: found 0 matching roles
+2026-03-11 05:39:15,761 [INFO] collectors.ats_collector: [ATS] Scanning: Judo Bank → https://www.judo.bank/careers
+2026-03-11 05:39:15,862 [INFO] collectors.ats_collector: [ATS] Judo Bank: found 0 matching roles
+2026-03-11 05:39:18,865 [INFO] collectors.ats_collector: [ATS] Scanning: Xplor → https://www.xplortechnologies.com/careers
+2026-03-11 05:39:27,494 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:39:27,523 [INFO] collectors.ats_collector: [ATS] Xplor: found 0 matching roles
+2026-03-11 05:39:30,528 [INFO] collectors.ats_collector: [ATS] Scanning: Bigtincan → https://www.bigtincan.com/careers/
+2026-03-11 05:39:35,133 [WARNING] collectors.ats_collector: [ATS] Failed for Bigtincan: HTTP Error 404: 
+2026-03-11 05:39:39,573 [INFO] collectors.ats_collector: [ATS] Scanning: SiteMinder → https://www.siteminder.com/careers/
+2026-03-11 05:39:44,512 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:39:44,575 [INFO] collectors.ats_collector: [ATS] SiteMinder: found 0 matching roles
+2026-03-11 05:39:47,578 [INFO] collectors.ats_collector: [ATS] Scanning: Domain → https://careers.domain.com.au/
+2026-03-11 05:39:51,630 [WARNING] collectors.ats_collector: [ATS] Failed for Domain: Failed to perform, curl: (6) Could not resolve host: careers.domain.com.au. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:39:55,938 [INFO] collectors.ats_collector: [ATS] Scanning: Macquarie Group → https://www.macquarie.com/au/en/careers.html
+2026-03-11 05:39:56,201 [INFO] collectors.ats_collector: [ATS] Macquarie Group: found 0 matching roles
+2026-03-11 05:39:59,202 [INFO] collectors.ats_collector: [ATS] Scanning: Zip Co → https://zip.co/us/careers
+2026-03-11 05:40:01,970 [INFO] collectors.ats_collector: [ATS] Zip Co: found 0 matching roles
+2026-03-11 05:40:04,976 [INFO] collectors.ats_collector: [ATS] Scanning: Tyro Payments → https://www.tyro.com/careers/
+2026-03-11 05:40:10,804 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:40:10,814 [INFO] collectors.ats_collector: [ATS] Tyro Payments: found 6 matching roles
+2026-03-11 05:40:13,817 [INFO] collectors.ats_collector: [ATS] Scanning: Mr Yum → https://careers.mryum.com/
+2026-03-11 05:40:17,858 [WARNING] collectors.ats_collector: [ATS] Failed for Mr Yum: Failed to perform, curl: (6) Could not resolve host: careers.mryum.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:40:22,227 [INFO] collectors.ats_collector: [ATS] Scanning: Go1 → https://www.go1.com/careers
+2026-03-11 05:40:27,922 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:40:27,935 [INFO] collectors.ats_collector: [ATS] Go1: found 0 matching roles
+2026-03-11 05:40:30,941 [INFO] collectors.ats_collector: [ATS] Scanning: Miro → https://miro.com/careers/
+2026-03-11 05:40:37,066 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:40:37,093 [INFO] collectors.ats_collector: [ATS] Miro: found 1 matching roles
+2026-03-11 05:40:40,093 [INFO] collectors.ats_collector: [ATS] Scanning: Kmart Group Tech → https://www.kmart.com.au/careers/tech/
+2026-03-11 05:40:46,990 [WARNING] collectors.ats_collector: [ATS] Failed for Kmart Group Tech: HTTP Error 404: 
+2026-03-11 05:40:51,476 [INFO] collectors.ats_collector: [ATS] Scanning: Woolworths Group → https://wowcareers.com.au/tech
+2026-03-11 05:41:40,501 [WARNING] collectors.ats_collector: [ATS] Failed for Woolworths Group: Failed to perform, curl: (28) Connection timed out after 15002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-03-11 05:41:44,900 [INFO] collectors.ats_collector: [ATS] Scanning: Aussie Broadband → https://www.aussiebroadband.com.au/careers/
+2026-03-11 05:41:48,984 [WARNING] collectors.ats_collector: [ATS] Failed for Aussie Broadband: HTTP Error 403: 
+2026-03-11 05:41:53,155 [INFO] collectors.ats_collector: [ATS] Scanning: Finder → https://www.finder.com.au/careers
+2026-03-11 05:41:59,606 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:41:59,625 [INFO] collectors.ats_collector: [ATS] Finder: found 3 matching roles
+2026-03-11 05:42:02,631 [INFO] collectors.ats_collector: [ATS] Scanning: Pet Circle → https://www.petcircle.com.au/careers
+2026-03-11 05:42:03,698 [INFO] collectors.ats_collector: [ATS] Pet Circle: found 0 matching roles
+2026-03-11 05:42:06,700 [INFO] collectors.ats_collector: [ATS] Scanning: HiPages → https://hipagesgroup.com.au/careers/
+2026-03-11 05:42:07,611 [INFO] collectors.ats_collector: [ATS] HiPages: found 0 matching roles
+2026-03-11 05:42:10,614 [INFO] collectors.ats_collector: [ATS] Scanning: Up Bank → https://up.com.au/careers/
+2026-03-11 05:42:16,076 [WARNING] collectors.ats_collector: Workable API failed: HTTP Error 404: 
+2026-03-11 05:42:16,086 [INFO] collectors.ats_collector: [ATS] Up Bank: found 2 matching roles
+2026-03-11 05:42:19,091 [INFO] collectors.ats_collector: [ATS] Scanning: PEXA → https://www.pexa.com.au/careers/
+2026-03-11 05:42:27,030 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:42:27,053 [INFO] collectors.ats_collector: [ATS] PEXA: found 0 matching roles
+2026-03-11 05:42:30,056 [INFO] collectors.ats_collector: [ATS] Scanning: Envato → https://envato.com/careers/
+2026-03-11 05:42:37,486 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:42:37,497 [INFO] collectors.ats_collector: [ATS] Envato: found 0 matching roles
+2026-03-11 05:42:40,498 [INFO] collectors.ats_collector: [ATS] Scanning: Judo Bank → https://www.judo.bank/careers
+2026-03-11 05:42:40,596 [INFO] collectors.ats_collector: [ATS] Judo Bank: found 0 matching roles
+2026-03-11 05:42:43,602 [INFO] collectors.ats_collector: [ATS] Scanning: Xplor → https://www.xplortechnologies.com/careers
+2026-03-11 05:42:49,092 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:42:49,121 [INFO] collectors.ats_collector: [ATS] Xplor: found 0 matching roles
+2026-03-11 05:42:52,126 [INFO] collectors.ats_collector: [ATS] Scanning: Bigtincan → https://www.bigtincan.com/careers/
+2026-03-11 05:42:56,798 [WARNING] collectors.ats_collector: [ATS] Failed for Bigtincan: HTTP Error 404: 
+2026-03-11 05:43:01,518 [INFO] collectors.ats_collector: [ATS] Scanning: SiteMinder → https://www.siteminder.com/careers/
+2026-03-11 05:43:06,468 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:43:06,511 [INFO] collectors.ats_collector: [ATS] SiteMinder: found 0 matching roles
+2026-03-11 05:43:09,512 [INFO] collectors.ats_collector: [ATS] Scanning: GitLab → https://about.gitlab.com/jobs/
+2026-03-11 05:43:15,692 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:43:15,732 [INFO] collectors.ats_collector: [ATS] GitLab: found 0 matching roles
+2026-03-11 05:43:18,738 [INFO] collectors.ats_collector: [ATS] Scanning: Stripe → https://stripe.com/jobs
+2026-03-11 05:43:24,380 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:43:24,418 [INFO] collectors.ats_collector: [ATS] Stripe: found 32 matching roles
+2026-03-11 05:43:27,423 [INFO] collectors.ats_collector: [ATS] Scanning: Automattic → https://automattic.com/work-with-us/
+2026-03-11 05:43:36,839 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:43:36,893 [INFO] collectors.ats_collector: [ATS] Automattic: found 0 matching roles
+2026-03-11 05:43:39,899 [INFO] collectors.ats_collector: [ATS] Scanning: Tailor → https://www.tailor.tech/careers
+2026-03-11 05:43:44,650 [WARNING] collectors.ats_collector: [ATS] Failed for Tailor: HTTP Error 404: 
+2026-03-11 05:43:49,063 [INFO] collectors.ats_collector: [ATS] Scanning: ProcurePro → https://procurepro.co/careers/
+2026-03-11 05:43:49,527 [INFO] collectors.ats_collector: [ATS] ProcurePro: found 19 matching roles
+2026-03-11 05:43:52,533 [INFO] collectors.ats_collector: [ATS] Scanning: upcover → https://www.upcover.com/careers
+2026-03-11 05:43:56,629 [WARNING] collectors.ats_collector: [ATS] Failed for upcover: HTTP Error 404: 
+2026-03-11 05:44:01,039 [INFO] collectors.ats_collector: [ATS] Scanning: Who Gives A Crap → https://au.whogivesacrap.org/pages/jobs
+2026-03-11 05:44:06,725 [WARNING] collectors.ats_collector: Greenhouse API failed: HTTP Error 404: 
+2026-03-11 05:44:06,750 [INFO] collectors.ats_collector: [ATS] Who Gives A Crap: found 2 matching roles
+2026-03-11 05:44:09,754 [INFO] collectors.ats_collector: [ATS] Scanning: Deputy → https://www.deputy.com/company/careers
+2026-03-11 05:44:09,854 [INFO] collectors.ats_collector: [ATS] Deputy: found 0 matching roles
+2026-03-11 05:44:13,153 [INFO] scheduler: ✅ ATSCollector: 77 signals → 0 new written
+2026-03-11 05:44:13,154 [INFO] scheduler: ▶ Starting RedditCollector...
+2026-03-11 05:44:40,938 [INFO] scheduler: ✅ RedditCollector: 1 signals → 0 new written
+2026-03-11 05:44:40,942 [INFO] scheduler: ▶ Starting SeekCollector...
+2026-03-11 05:44:43,235 [INFO] collectors.seek_collector: [SEEK] 'product manager': found 22 listings
+2026-03-11 05:44:49,125 [INFO] collectors.seek_collector: [SEEK] 'senior product manager': found 22 listings
+2026-03-11 05:44:55,662 [INFO] collectors.seek_collector: [SEEK] 'head of product': found 22 listings
+2026-03-11 05:45:01,925 [INFO] collectors.seek_collector: [SEEK] 'product lead': found 22 listings
+2026-03-11 05:45:07,633 [INFO] collectors.seek_collector: [SEEK] 'group product manager': found 22 listings
+2026-03-11 05:45:09,317 [INFO] scheduler: ✅ SeekCollector: 110 signals → 0 new written
+2026-03-11 05:45:09,320 [INFO] scheduler: ▶ Starting IndeedCollector...
+2026-03-11 05:45:10,500 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+manager&l=Australia&sort=date
+2026-03-11 05:45:11,474 [INFO] collectors.indeed_collector: [Indeed] 'product manager': 15 listings successfully fetched
+2026-03-11 05:45:16,480 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=senior+product+manager&l=Australia&sort=date
+2026-03-11 05:45:17,401 [INFO] collectors.indeed_collector: [Indeed] 'senior product manager': 15 listings successfully fetched
+2026-03-11 05:45:22,402 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=head+of+product&l=Australia&sort=date
+2026-03-11 05:45:23,443 [INFO] collectors.indeed_collector: [Indeed] 'head of product': 15 listings successfully fetched
+2026-03-11 05:45:28,447 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=product+lead&l=Australia&sort=date
+2026-03-11 05:45:29,965 [INFO] collectors.indeed_collector: [Indeed] 'product lead': 15 listings successfully fetched
+2026-03-11 05:45:34,966 [INFO] collectors.indeed_collector: [Indeed] Fetching search page: https://au.indeed.com/jobs?q=group+product+manager&l=Australia&sort=date
+2026-03-11 05:45:35,877 [INFO] collectors.indeed_collector: [Indeed] 'group product manager': 15 listings successfully fetched
+2026-03-11 05:45:38,227 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager @ Commonwealth Bank (indeed)
+2026-03-11 05:45:38,837 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:45:38,838 [INFO] alerter: Slack alert sent for Commonwealth Bank — Product Manager
+2026-03-11 05:45:41,032 [INFO] pipeline: ✅ Wrote signal [7/10] Product Manager (Legal Experience) @ Thomson Reuters (indeed)
+2026-03-11 05:45:41,401 [INFO] httpx: HTTP Request: POST https://hooks.slack.com/services/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 "HTTP/1.1 200 OK"
+2026-03-11 05:45:41,402 [INFO] alerter: Slack alert sent for Thomson Reuters — Product Manager (Legal Experience)
+2026-03-11 05:45:43,443 [INFO] pipeline: ✅ Wrote signal [5/10] Data & Integrations Product Manager @ Breadcrumb (indeed)
+2026-03-11 05:45:44,210 [INFO] pipeline: ✅ Wrote signal [5/10] Brand & Product Lead @ PT. Busana Inovasi Global (indeed)
+2026-03-11 05:45:44,211 [INFO] scheduler: ✅ IndeedCollector: 75 signals → 4 new written
+2026-03-11 05:45:44,212 [INFO] scheduler: ▶ Starting JoraCollector...
+2026-03-11 05:45:45,837 [INFO] collectors.jora_collector: [Jora] 'product manager': 13 listings
+2026-03-11 05:45:51,276 [INFO] collectors.jora_collector: [Jora] 'head of product': 12 listings
+2026-03-11 05:45:58,323 [INFO] collectors.jora_collector: [Jora] 'product lead': 8 listings
+2026-03-11 05:45:59,926 [INFO] scheduler: ✅ JoraCollector: 33 signals → 0 new written
+2026-03-11 05:45:59,930 [INFO] scheduler: ▶ Starting WellfoundCollector...
+2026-03-11 05:46:08,411 [WARNING] collectors.wellfound_collector: [Wellfound] Wellfound blocked with 403 for product-manager/remote. Cloudflare protection active. Skipping — no retry.
+2026-03-11 05:46:13,981 [WARNING] collectors.wellfound_collector: [Wellfound] Wellfound blocked with 403 for head-of-product/australia. Cloudflare protection active. Skipping — no retry.
+2026-03-11 05:46:16,876 [INFO] scheduler: ✅ WellfoundCollector: 0 signals → 0 new written
+2026-03-11 05:46:16,876 [INFO] scheduler: ▶ Starting RecruiterCollector...
+2026-03-11 05:46:24,595 [ERROR] collectors.recruiter_collector: [Recruiters] Failed to scrape S2M: [Errno 61] Connection refused
+2026-03-11 05:46:26,186 [INFO] scheduler: ✅ RecruiterCollector: 3 signals → 0 new written
+2026-03-11 05:46:26,186 [INFO] __main__: Single pass complete. Check hiring_signals tab in Google Sheets.
