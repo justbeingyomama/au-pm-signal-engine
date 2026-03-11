@@ -2,9 +2,9 @@ name: Run AU PM Signal Engine
 
 on:
   schedule:
-    # Run every 6 hours (at minute 0 past every 6th hour)
-    - cron: '0 */6 * * *'
-  workflow_dispatch: # Allows manual triggering from the GitHub UI
+    - cron: "0 3 * * *"
+    - cron: "0 10 * * *"
+  workflow_dispatch:
 
 jobs:
   scrape:
