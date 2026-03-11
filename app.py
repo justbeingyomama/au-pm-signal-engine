@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from sheets.client import SheetsClient
-from models import Signal
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -172,23 +171,23 @@ def main():
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-   # --- Data Display ---
-st.subheader(f"Matching Results ({len(filtered_df)})")
+    # --- Data Display ---
+    st.subheader(f"Matching Results ({len(filtered_df)})")
 
-display_cols = ["Role", "Company", "Location", "Score", "Remote Likelihood", "Date", "Source", "URL"]
-display_df = filtered_df[display_cols].copy()
+    display_cols = ["Role", "Company", "Location", "Score", "Remote Likelihood", "Date", "Source", "URL"]
+    display_df = filtered_df[display_cols].copy()
 
-display_df["Date"] = display_df["Date"].dt.strftime("%Y-%m-%d")
+    display_df["Date"] = display_df["Date"].dt.strftime("%Y-%m-%d")
 
-st.dataframe(
-    display_df,
-    use_container_width=True,
-    hide_index=True,
-    column_config={
-        "URL": st.column_config.LinkColumn("URL"),
-        "Score": st.column_config.NumberColumn("Score", format="%d"),
-    },
-)
+    st.dataframe(
+        display_df,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "URL": st.column_config.LinkColumn("URL"),
+            "Score": st.column_config.NumberColumn("Score", format="%d"),
+        },
+    )
 
 if __name__ == "__main__":
     main()
