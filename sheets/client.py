@@ -3,7 +3,6 @@ sheets/client.py — Google Sheets API wrapper using gspread
 """
 from __future__ import annotations
 
-import json
 import logging
 from typing import Optional
 
@@ -39,9 +38,8 @@ STATE_HEADERS = [
 
 
 class SheetsClient:
-    def __init__(self, credentials_json: str, spreadsheet_id: str):
-        creds_dict = json.loads(credentials_json)
-        creds = Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
+def __init__(self, credentials_info: dict, spreadsheet_id: str):
+    creds = Credentials.from_service_account_info(credentials_info, scopes=SCOPES)
         self._gc = gspread.authorize(creds)
         self._spreadsheet_id = spreadsheet_id
         self._sh = self._gc.open_by_key(spreadsheet_id)
