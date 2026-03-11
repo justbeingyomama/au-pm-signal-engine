@@ -1,12 +1,7 @@
 import streamlit as st
 import pandas as pd
 from sheets.client import SheetsClient
-import os
-from dotenv import load_dotenv
 from models import Signal
-
-# Load environment variables
-load_dotenv()
 
 # --- Page Configuration ---
 st.set_page_config(
@@ -56,41 +51,36 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Data Loading ---
-@st.cache_data(ttl=300) # Cache for 5 minutes
+@st.cache_data(ttl=300)
 def load_data():
     """Load data from Google Sheets into a Pandas DataFrame."""
     try:
-        creds_path = os.getenv("GOOGLE_CREDENTIALS_JSON", "service_account.json")
-        sheet_id = os.getenv("SPREADSHEET_ID")
-        
-        if not sheet_id:
-            st.error("SPREADSHEET_ID environment variable not set.")
-            return pd.DataFrame()
+        creds_json = st.secrets["GOOGLE_CREDENTIALS_JSON"]
+        sheet_id = st.secrets["SPREADSHEET_ID"]
 
-        client = SheetsClient(credentials_path=creds_path, spreadsheet_id=sheet_id)
+        client = SheetsClient(credentials_json=creds_json, spreadsheet_id=sheet_id)
         rows = client.get_all_signal_rows()
+
         if not rows:
             return pd.DataFrame()
-        
-        # Signal.to_sheet_row() format:
-        # [id, title, comp, loc, src, type, date, remote, score, status, url, text]
+
         columns = [
             "ID", "Dedupe Hash", "Source", "Type", "Company",
             "Role", "Location", "URL", "Date", "Discovered Date",
             "Score", "High Priority", "Remote Likelihood", "Raw Text", "Notes", "Status"
         ]
-        
+
         df = pd.DataFrame(rows, columns=columns)
-        
-        # Convert types for filtering/sorting
-        df['Score'] = pd.to_numeric(df['Score'], errors='coerce').fillna(0)
-        df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
-        
-        # Sort by most recent and highest score
-        df = df.sort_values(by=['Date', 'Score'], ascending=[False, False])
+
+        df["Score"] = pd.to_numeric(df["Score"], errors="coerce").fillna(0)
+        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+
+        df = df.sort_values(by=["Date", "Score"], ascending=[False, False])
         return df
+
     except Exception as e:
-        st.error(f"Failed to connect to Google Sheets: {e}")
+        st.error("Failed to connect to Google Sheets.")
+        st.exception(e)
         return pd.DataFrame()
 
 # --- Main App ---
