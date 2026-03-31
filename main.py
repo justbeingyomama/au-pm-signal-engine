@@ -9,6 +9,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import os
 import sys
@@ -44,27 +45,30 @@ def main():
     spreadsheet_id = os.getenv("SPREADSHEET_ID", "")
 
     if not spreadsheet_id:
-        logger.error("SPREADSHEET_ID is not set. Create a .env file from .env.example.")
+        logger.error("SPREADSHEET_ID is not set.")
         sys.exit(1)
 
     if not os.path.isfile(credentials_path):
         logger.error(
             f"Google credentials file not found: {credentials_path}\n"
-            "Please set GOOGLE_CREDENTIALS_JSON in .env and provide the service account JSON."
+            "Please provide the service account JSON file."
         )
         sys.exit(1)
+
+    with open(credentials_path, "r", encoding="utf-8") as f:
+        credentials_info = json.load(f)
 
     # Initialize clients
     from sheets.client import SheetsClient
     from alerter import Alerter
 
     logger.info("Connecting to Google Sheets...")
-    sheets = SheetsClient(credentials_path, spreadsheet_id)
+    sheets = SheetsClient(credentials_info, spreadsheet_id)
 
     # --setup mode
     if args.setup:
         from sheets.setup import setup
-        setup(credentials_path, spreadsheet_id)
+        setup(credentials_info, spreadsheet_id)
         return
 
     # Ensure tabs exist
@@ -75,7 +79,6 @@ def main():
     logger.info(f"Slack alerts: {slack_status}")
 
     if args.once:
-        # Single pass
         logger.info("Running all collectors (single pass)...")
         from scheduler import Scheduler
         sched = Scheduler(sheets, alerter)
@@ -87,11 +90,9 @@ def main():
     from scheduler import Scheduler
     sched = Scheduler(sheets, alerter)
 
-    # Run first pass immediately
     logger.info("Running initial pass of all collectors...")
     sched.run_all_once()
 
-    # Start scheduler for ongoing polling
     sched.setup()
     sched.start()
 
