@@ -14,9 +14,6 @@ import os
 import sys
 import time
 
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Configure logging
 logging.basicConfig(
