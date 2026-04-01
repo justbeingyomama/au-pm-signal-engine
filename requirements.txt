@@ -11,3 +11,4 @@ beautifulsoup4
 feedparser
 praw
 curl_cffi
+lxml
