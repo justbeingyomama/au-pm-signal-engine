@@ -10,3 +10,4 @@ APScheduler==3.10.4
 beautifulsoup4
 feedparser
 praw
+curl_cffi
