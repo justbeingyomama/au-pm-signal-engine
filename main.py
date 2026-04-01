@@ -40,7 +40,6 @@ def main():
     )
     args = parser.parse_args()
 
-    # Validate required env
     credentials_path = os.getenv("GOOGLE_CREDENTIALS_JSON", "credentials.json")
     spreadsheet_id = os.getenv("SPREADSHEET_ID", "")
 
@@ -58,20 +57,17 @@ def main():
     with open(credentials_path, "r", encoding="utf-8") as f:
         credentials_info = json.load(f)
 
-    # Initialize clients
     from sheets.client import SheetsClient
     from alerter import Alerter
 
     logger.info("Connecting to Google Sheets...")
     sheets = SheetsClient(credentials_info, spreadsheet_id)
 
-    # --setup mode
     if args.setup:
         from sheets.setup import setup
         setup(credentials_info, spreadsheet_id)
         return
 
-    # Ensure tabs exist
     sheets.ensure_tabs()
 
     alerter = Alerter()
@@ -86,7 +82,6 @@ def main():
         logger.info("Single pass complete. Check hiring_signals tab in Google Sheets.")
         return
 
-    # Scheduled mode
     from scheduler import Scheduler
     sched = Scheduler(sheets, alerter)
 
