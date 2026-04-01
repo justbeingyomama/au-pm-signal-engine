@@ -6,7 +6,7 @@ google-auth-oauthlib
 openpyxl
 requests
 httpx==0.28.1
-streamlit==1.55.0
-pandas==2.2.2
-gspread==6.1.2
-google-auth==2.35.0
+APScheduler==3.10.4
+beautifulsoup4
+feedparser
+praw
